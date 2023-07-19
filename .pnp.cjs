@@ -31,6 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.45.0"],\
             ["eslint-config-next", "virtual:b9ed07a91964c9abff4e9f148eb1390e6797e7670a39626f23012a33271765370b0a951e4c151dd3667c4499176c6e722c8a6e386e0d4b402820b7ca5197b3ac#npm:13.4.10"],\
             ["next", "virtual:b9ed07a91964c9abff4e9f148eb1390e6797e7670a39626f23012a33271765370b0a951e4c151dd3667c4499176c6e722c8a6e386e0d4b402820b7ca5197b3ac#npm:13.4.10"],\
+            ["prettier", "npm:3.0.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:b9ed07a91964c9abff4e9f148eb1390e6797e7670a39626f23012a33271765370b0a951e4c151dd3667c4499176c6e722c8a6e386e0d4b402820b7ca5197b3ac#npm:18.2.0"]\
           ],\
@@ -1866,6 +1867,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.45.0"],\
             ["eslint-config-next", "virtual:b9ed07a91964c9abff4e9f148eb1390e6797e7670a39626f23012a33271765370b0a951e4c151dd3667c4499176c6e722c8a6e386e0d4b402820b7ca5197b3ac#npm:13.4.10"],\
             ["next", "virtual:b9ed07a91964c9abff4e9f148eb1390e6797e7670a39626f23012a33271765370b0a951e4c151dd3667c4499176c6e722c8a6e386e0d4b402820b7ca5197b3ac#npm:13.4.10"],\
+            ["prettier", "npm:3.0.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:b9ed07a91964c9abff4e9f148eb1390e6797e7670a39626f23012a33271765370b0a951e4c151dd3667c4499176c6e722c8a6e386e0d4b402820b7ca5197b3ac#npm:18.2.0"]\
           ],\
@@ -2762,6 +2764,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/prelude-ls-npm-1.2.1-3e4d272a55-cd192ec0d0.zip/node_modules/prelude-ls/",\
           "packageDependencies": [\
             ["prelude-ls", "npm:1.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["prettier", [\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/prettier-npm-3.0.0-7ffbcce680-6a832876a1.zip/node_modules/prettier/",\
+          "packageDependencies": [\
+            ["prettier", "npm:3.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
