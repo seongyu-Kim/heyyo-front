@@ -1,5 +1,5 @@
 import NavBar from "@/components/common/navbar/NavBar";
-import PageHead from "@/components/common/page-head/pageHead";
+import PageHead from "@/components/common/page-head/PageHead";
 
 export default function Home() {
   return (
