@@ -8,7 +8,7 @@ export default function FindLinkBox() {
                     잊으셨나요?
                 </div>
             </Link>
-            <Link href="/" passHref>
+            <Link href="/signup" passHref>
                 <div className="sign">
                     회원가입
                 </div>
