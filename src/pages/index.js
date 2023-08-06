@@ -5,8 +5,6 @@ export default function Home() {
   return (
       <>
         <div>
-          <PageHead />
-          <NavBar />
           <h1>Home</h1>
         </div>
       </>

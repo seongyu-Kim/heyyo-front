@@ -6,8 +6,6 @@ import LoginRightTab from "@/components/pages/login/login-right-tab/LoginRightTa
 export default function login() {
   return (
     <div>
-      <PageHead />
-      <NavBar />
         <LoginLeftTab />
         <LoginRightTab />
     </div>
