@@ -1,3 +1,12 @@
+:root {
+  /*swiper.js navigation*/
+  --swiper-navigation-top-offset: 65%;
+  --swiper-navigation-sides-offset: 350px;
+  --swiper-navigation-color: #F2923B ;
+
+  /*swiper.js pagination*/
+  --swiper-pagination-color: #F2923B;
+}
 html,body {
   width: 100vw;
   height: 100vh;
@@ -5,6 +14,7 @@ html,body {
   padding: 0;
   margin: 0;
   -webkit-text-size-adjust: none;
+  font-family: Noto Sans KR;
 }
 
 a {
@@ -47,7 +57,7 @@ h6 {
 *,
 *:before,
 *:after {
-  font-family: Pretendard;
+  font-family: Noto Sans KR;
   box-sizing: border-box;
 }
 
@@ -64,4 +74,22 @@ button {
   padding: 0;
   border: none;
   cursor: pointer;
+  font-family: Noto Sans KR;
 }
+
+.swiper-button-prev.swiper-button-disabled{
+  color: rgba(217, 217, 217, 1) ;
+  opacity:1 !important;
+}
+
+.swiper-pagination-bullet {
+
+  width: 18px !important;
+  height: 18px !important;
+  margin: -10px 10px !important;
+
+
+}
+
+
+

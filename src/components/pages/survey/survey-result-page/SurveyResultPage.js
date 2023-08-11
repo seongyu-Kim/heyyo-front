@@ -1,33 +1,43 @@
-import Link from "next/link";
-import { useState } from "react";
-
-export default function SurveyResult() {
-  const [isChar, setIsChar] = useState([
-    "고도기",
-    "소통이",
-    "북저기",
-    "한사니",
-    "영구",
-    "유이기",
-    "소시미",
-    "집중이",
-  ]);
+import React from "react";
+import Image from "next/image";
+export default function SurveyResult({
+  restartSurvey,
+  selectedData,
+  titleColor,
+  bgColor,
+  contentColor,
+}) {
+  const imageStyle = {
+    position: "absolute",
+    top: selectedData.imgPosition?.top || 0,
+    left: selectedData.imgPosition?.left || 0,
+  };
   return (
     <>
       <div className="container">
         <h2 className="title">
           해요님은{" "}
-          <span style={{ fontSize: "50", color: "#6ECEC9" }}>
-            '{isChar[4]}'
+          <span style={{ fontSize: "50", color: titleColor }}>
+            &apos;{selectedData.title}&apos;
           </span>{" "}
           타입이시군요!
         </h2>
       </div>
 
       <div className="container">
-        <img className="image" src="/img/SurveyResult.svg" />
-        <div className="bg">
-          <h1 className="bgContent">#연구해요 #몰입중 #하나만_판다</h1>
+        <div className="absolute">
+          <Image
+            alt="char"
+            src={selectedData.img}
+            width={selectedData.width}
+            height={selectedData.height}
+            style={imageStyle}
+          />
+        </div>
+        <div className="bg" style={{ background: bgColor }}>
+          <h1 className="bgContent" style={{ color: contentColor }}>
+            {selectedData.hashtag}
+          </h1>
         </div>
       </div>
 
@@ -35,8 +45,10 @@ export default function SurveyResult() {
         <button className="btn btnContent">내 타입 그룹방 바로가기</button>
       </div>
 
-      <div className="container btn2">
-        <Link href="/survey">테스트 다시하기</Link>
+      <div className="container">
+        <button className="btn2" onClick={restartSurvey}>
+          테스트 다시하기
+        </button>
       </div>
 
       <style jsx>{`
@@ -51,13 +63,12 @@ export default function SurveyResult() {
           margin-top: 136px;
 
           border-radius: 37px;
-          background: rgba(110, 206, 201, 0.3);
         }
 
         .bgContent {
           margin-top: 112px;
 
-          color: #46bcb3;
+          color: #88d159;
           text-align: center;
           font-size: 50px;
           font-weight: 900;
@@ -68,7 +79,6 @@ export default function SurveyResult() {
           width: 300px;
           height: 50px;
           margin-top: 76px;
-
           border-radius: 13px;
           background: #f2923b;
         }
@@ -83,9 +93,8 @@ export default function SurveyResult() {
         }
 
         .btn2 {
-          margin-top: 10px;
-
           color: #8c9499;
+          margin-top: 10px;
           text-align: center;
           font-size: 13px;
           font-style: normal;
@@ -93,11 +102,13 @@ export default function SurveyResult() {
           line-height: normal;
         }
 
-        .image {
-          margin-top: 36px;
+        .absolute {
+          top: 100px;
+          //width: 541px;
+          //height: 489.914px;
 
           position: absolute;
-          left: 79px;
+          left: 200px;
         }
       `}</style>
     </>
