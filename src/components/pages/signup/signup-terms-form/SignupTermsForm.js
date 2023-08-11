@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { Font } from "/public/fonts/Font";
 
 export default function SignupTermsForm() {
   const data = [
@@ -45,14 +46,14 @@ export default function SignupTermsForm() {
                   />
                   {checkItems.length === data.length ? (
                     <Image
-                      src="/icon/checked_checkbox.svg"
+                      src="/icon/Checked_Checkbox.svg"
                       alt="Checked"
                       width={20}
                       height={20}
                     />
                   ) : (
                     <Image
-                      src="/icon/unchecked_checkbox.svg"
+                      src="/icon/Unchecked_Checkbox.svg"
                       alt="Unchecked"
                       width={20}
                       height={20}
@@ -87,14 +88,14 @@ export default function SignupTermsForm() {
                     />
                     {checkItems.includes(item.id) ? (
                       <Image
-                        src="/icon/checked_checkbox.svg"
+                        src="/icon/Checked_Checkbox.svg"
                         alt="Checked"
                         width={20}
                         height={20}
                       />
                     ) : (
                       <Image
-                        src="/icon/unchecked_checkbox.svg"
+                        src="/icon/Unchecked_Checkbox.svg"
                         alt="Unchecked"
                         width={20}
                         height={20}
@@ -122,7 +123,7 @@ export default function SignupTermsForm() {
           .line {
             width: 27.9375rem;
             height: 0.0625rem;
-            background: url("/icon/termsline.svg") no-repeat;
+            background: url("/icon/TermsLine.svg") no-repeat;
           }
 
           .terms-all {
@@ -130,11 +131,8 @@ export default function SignupTermsForm() {
             height: 1.25rem;
             flex-shrink: 0;
             color: #000;
-            font-family: "Noto Sans KR", sans-serif;
-            font-size: 0.8125rem;
-            font-style: normal;
+            font-size: ${Font.Size.S};
             font-weight: 700;
-            line-height: normal;
           }
 
           .terms-data {
@@ -142,11 +140,8 @@ export default function SignupTermsForm() {
             height: 1.25rem;
             flex-shrink: 0;
             color: #000;
-            font-family: "Noto Sans KR", sans-serif;
-            font-size: 0.8125rem;
-            font-style: normal;
+            font-size: ${Font.Size.S};
             font-weight: 400;
-            line-height: normal;
           }
 
           .data {
@@ -169,11 +164,8 @@ export default function SignupTermsForm() {
           .terms-button {
             color: #8c9499;
             text-align: right;
-            font-family: Noto Sans KR;
-            font-size: 0.625rem;
-            font-style: normal;
+            font-size: ${Font.Size.XS};
             font-weight: 400;
-            line-height: normal;
             text-decoration-line: underline;
             margin-left: 9.38rem;
           }

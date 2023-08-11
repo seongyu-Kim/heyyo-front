@@ -1,56 +1,63 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { Font } from "/public/fonts/Font";
 
 export default function LoginInputForm() {
-    const [showPassword, setShowPassword] = useState(false);
-    const togglePasswordVisibility = () => {
-        setShowPassword((prevShowPassword) => !prevShowPassword);
-    };
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
 
-    return (
-        <div className="box">
-            <div>
-                <span>
-                    <input id="id" className="login-input-id" type="text" placeholder="dms3151@gmail.com" />
-                </span>
-            </div>
-            <div className="password-wrapper">
-                <span>
-                  <input
-                      id="password"
-                      className="login-input-pw"
-                      type={showPassword ? "text" : "password"}
-                      placeholder="비밀번호 입력"
-                  />
-                  <div className="password">
-                      <Image
-                          src={
-                              showPassword
-                                  ? "/icon/passwordVisibleIcon.svg"
-                                  : "/icon/passwordInvisibleIcon.svg"
-                          }
-                          alt="password"
-                          loader={({ }) =>
-                              showPassword
-                                  ? `/icon/passwordVisibleIcon.svg`
-                                  : `/icon/passwordInvisibleIcon.svg`
-                          }
-                          width={14}
-                          height={14}
-                          onClick={togglePasswordVisibility}
-                      />
-                  </div>
-                </span>
-            </div>
-            <div>
-                <span>
-                    <button className="login-button">로그인하기</button>
-                </span>
-            </div>
+  return (
+    <div className="box">
+      <div>
+        <span>
+          <input
+            id="id"
+            className="login-input-id"
+            type="text"
+            placeholder="dms3151@gmail.com"
+          />
+        </span>
+      </div>
+      <div className="password-wrapper">
+        <span>
+          <input
+            id="password"
+            className="login-input-pw"
+            type={showPassword ? "text" : "password"}
+            placeholder="비밀번호 입력"
+          />
+          <div className="password">
+            <Image
+              src={
+                showPassword
+                  ? "/icon/PasswordVisibleIcon.svg"
+                  : "/icon/PasswordInvisibleIcon.svg"
+              }
+              alt="password"
+              loader={({}) =>
+                showPassword
+                  ? `/icon/PasswordVisibleIcon.svg`
+                  : `/icon/PasswordInvisibleIcon.svg`
+              }
+              width={14}
+              height={14}
+              onClick={togglePasswordVisibility}
+            />
+          </div>
+        </span>
+      </div>
+      <div>
+        <span>
+          <button className="login-button">로그인하기</button>
+        </span>
+      </div>
 
-        {/* CSS */}
-        <style jsx>{`
-          .box{
+      {/* CSS */}
+      <style jsx>
+        {`
+          .box {
             position: relative;
             display: flex;
             flex-direction: column;
@@ -59,55 +66,47 @@ export default function LoginInputForm() {
           .login-input-id {
             width: 23.9375rem;
             height: 2.125rem;
-            flex-shrink: 0;
             padding: 18px;
             border: none;
             border-radius: 0.5625rem;
-            background: #E9F7FF;
+            background: #e9f7ff;
             left: 8.75rem;
             margin-bottom: 0.94rem;
-            
+
             /* Placeholder 스타일 지정 */
             ::placeholder {
               color: #000;
               text-align: center;
-              font-family: 'Noto Sans KR', sans-serif;
-              font-size: 0.8125rem;
-              font-style: normal;
+              font-size: ${Font.Size.S};
               font-weight: 400;
               line-height: 129.8%;
             }
           }
-          
-          .login-input-pw {              
+
+          .login-input-pw {
             width: 23.9375rem;
             height: 2.125rem;
-            flex-shrink: 0;
             padding: 18px;
             border: none;
             border-radius: 0.5625rem;
-            background: #E9F7FF;
+            background: #e9f7ff;
             left: 8.75rem;
             margin-bottom: 0.94rem;
           }
-          
+
           .login-button {
             width: 23.9375rem;
             height: 2.125rem;
-            flex-shrink: 0;
             border-radius: 0.5625rem;
-            background: #229EEB;
+            background: #229eeb;
             left: 8.75rem;
             margin-bottom: 0.56rem;
-            color: #FFF;
+            color: #fff;
             text-align: center;
-            font-family: Noto Sans KR;
-            font-size: 0.8125rem;
-            font-style: normal;
+            font-size: ${Font.Size.S};
             font-weight: 900;
-            line-height: normal;
           }
-          
+
           .password-wrapper {
             position: relative;
           }
@@ -119,7 +118,7 @@ export default function LoginInputForm() {
             top: 0.63rem;
           }
         `}
-        </style>
-        </div>
-    );
+      </style>
+    </div>
+  );
 }
