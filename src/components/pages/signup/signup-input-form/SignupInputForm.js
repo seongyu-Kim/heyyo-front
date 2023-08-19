@@ -1,15 +1,44 @@
-// TODO.닉네임 중복확인 작업 필요
 import React, { useState } from "react";
+import { useRecoilState } from "recoil";
 import Image from "next/image";
 import SignupEmailForm from "@/components/pages/signup/signup-email-form/SignupEmailForm";
 import SignupSmsForm from "@/components/pages/signup/signup-sms-form/SignupSmsForm";
 import { Font } from "/public/fonts/Font";
+import { nameState, nicknameState, passwordState } from "@/recoil/atoms/Atoms";
+import {
+  checkEmailDuplicate,
+  checkNicknameDuplicate,
+} from "@/apis/auth/duplicateCheck";
 
 export default function SignupInputForm() {
+  // Recoil
+  const [name, setName] = useRecoilState(nameState);
+  const [nickname, setNickname] = useRecoilState(nicknameState);
+  const [password, setPassword] = useRecoilState(passwordState);
+
+  const [duplicateNicknameStatus, setDuplicateNicknameStatus] = useState(null);
+
+  // 닉네임 중복확인
+  const handleNicknameCheck = async () => {
+    const inputNickname = nickname;
+    try {
+      const { isDuplicateNickname, message } = await checkNicknameDuplicate(
+        inputNickname,
+      );
+      setDuplicateNicknameStatus({ isDuplicateNickname, message });
+    } catch (error) {
+      setDuplicateNicknameStatus({
+        isDuplicateNickname: true,
+        message: "API 호출 오류",
+      });
+    }
+  };
+
   // 비밀번호 표시
   const [showPasswordInput, setShowPasswordInput] = useState(false);
   const [showPasswordConfirmation, setShowPasswordConfirmation] =
     useState(false);
+
   const togglePasswordInputVisibility = () => {
     setShowPasswordInput((prevShowPasswordInput) => !prevShowPasswordInput);
   };
@@ -20,17 +49,23 @@ export default function SignupInputForm() {
   };
 
   // 비밀번호 일치 불일치 확인
-  const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [passwordMatchMessage, setPasswordMatchMessage] = useState("");
 
   const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
+    const newPassword = event.target.value;
+    setPassword(newPassword);
+    isPasswordCorrect(newPassword, passwordConfirmation);
   };
 
   const handlePasswordConfirmationChange = (event) => {
-    setPasswordConfirmation(event.target.value);
-    if (event.target.value === password) {
+    const newConfirmation = event.target.value;
+    setPasswordConfirmation(newConfirmation);
+    isPasswordCorrect(password, newConfirmation);
+  };
+
+  const isPasswordCorrect = (newPassword, newConfirmation) => {
+    if (newConfirmation === newPassword) {
       setPasswordMatchMessage("일치");
     } else {
       setPasswordMatchMessage("불일치");
@@ -43,6 +78,8 @@ export default function SignupInputForm() {
         <span>
           <input
             id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="signup-input"
             type="text"
             placeholder="이름을 입력해주세요."
@@ -50,26 +87,38 @@ export default function SignupInputForm() {
         </span>
       </div>
       <div className="signup-input-wrapper">
-        <span>
-          <label>
-            <input
-              id="nickname"
-              className="signup-input"
-              type="text"
-              placeholder="닉네임을 입력해주세요."
-            />
-            <button className="nickname-button">중복확인</button>
-          </label>
-        </span>
+        <label>
+          <input
+            id="nickname"
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
+            className="signup-input"
+            type="text"
+            placeholder="닉네임을 입력해주세요."
+          />
+          <button className="nickname-button" onClick={handleNicknameCheck}>
+            중복확인
+          </button>
+        </label>
+        <p
+          className={
+            duplicateNicknameStatus?.isDuplicateNickname
+              ? "error-message"
+              : "success-message"
+          }
+        >
+          {duplicateNicknameStatus?.message}
+        </p>
       </div>
+
       <div className="pw-wrapper">
         <span>
           <input
             id="pw"
+            value={password}
             className="signup-input"
             type={showPasswordInput ? "text" : "password"}
             placeholder="비밀번호 입력"
-            value={password}
             onChange={handlePasswordChange}
           />
           <div className="pw">
@@ -168,6 +217,8 @@ export default function SignupInputForm() {
 
           .signup-input-wrapper {
             position: relative;
+            display: flex;
+            align-items: center;
           }
 
           .nickname-button {
@@ -181,6 +232,25 @@ export default function SignupInputForm() {
             text-align: center;
             font-size: ${Font.Size.XS};
             font-weight: 700;
+          }
+
+          .success-message {
+            color: #229eeb;
+            text-align: right;
+            font-size: ${Font.Size.XS};
+            font-weight: 700;
+            height: 1.6875rem;
+            margin-left: 0.5rem;
+          }
+
+          .error-message {
+            color: #f88;
+            text-align: right;
+            font-size: ${Font.Size.XS};
+            font-weight: 700;
+            text-decoration-line: underline;
+            height: 1.6875rem;
+            margin-left: 0.5rem;
           }
 
           .pw-wrapper {
