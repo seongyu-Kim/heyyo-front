@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Font } from "/public/fonts/Font";
 
-export default function SignupTermsForm() {
+export default function SignupTermsForm({ onCheckItemsChange }) {
   const data = [
     { id: 0, title: "이용약관 동의 (필수)" },
     { id: 1, title: "개인정보 수집 및 이용 동의 (필수)" },
@@ -12,6 +12,10 @@ export default function SignupTermsForm() {
   ];
 
   const [checkItems, setCheckItems] = useState([]);
+
+  useEffect(() => {
+    onCheckItemsChange(checkItems);
+  }, [checkItems]);
 
   const handleSingleCheck = (checked, id) => {
     if (checked) {
