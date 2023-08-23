@@ -1,4 +1,4 @@
-// TODO. 모달창 구현 필요 (채팅, 알림, 프로필)
+// TODO. 모달창 구현 필요 (채팅, 알림, 프로필), 닉네임 가져오기
 
 import Link from "next/link";
 import Image from "next/image";
@@ -13,6 +13,8 @@ export default function NavBar() {
   const notificationModalRef = useRef(null);
   const messageModalRef = useRef(null);
   const moreModalRef = useRef(null);
+  const [accessToken, setAccessToken] = useState(null);
+  const [userNickName, setUserNickName] = useState(null);
 
   const openNotification = () => {
     setIsNotificationOpen(true);
@@ -38,7 +40,24 @@ export default function NavBar() {
     setIsMoreOpen(false);
   };
 
+  const handleLogout = () => {
+    sessionStorage.removeItem("accessToken");
+    sessionStorage.removeItem("userNickName");
+    window.location.reload();
+  };
+
   useEffect(() => {
+    const storedAccessToken = sessionStorage.getItem("accessToken");
+    const storedUserNickName = sessionStorage.getItem("userNickName");
+
+    if (storedAccessToken) {
+      setAccessToken(storedAccessToken);
+    }
+
+    if (storedUserNickName) {
+      setUserNickName(storedUserNickName);
+    }
+
     const handleClickOutside = (event) => {
       if (
         notificationModalRef.current &&
@@ -77,102 +96,113 @@ export default function NavBar() {
             src="/icon/Logo.svg"
             alt="logo"
             loader={() => "/icon/Logo.svg"}
-            width={139}
-            height={41}
+            fill
           />
         </div>
       </Link>
-      <Link href="/video" passHref>
-        <div className="video-link">
-          <Image
-            src="/icon/Video.svg"
-            alt="video"
-            loader={() => "/icon/Video.svg"}
-            width={34}
-            height={34}
-          />
-        </div>
-      </Link>
-      <Link href="" passHref>
-        <div className="notification-link" onClick={openNotification}>
-          <Image
-            src="/icon/Notification.svg"
-            alt="notification"
-            loader={() => "/icon/Notification.svg"}
-            width={26}
-            height={26}
-          />
-        </div>
-      </Link>
-      {isNotificationOpen && (
-        <div className="notification-modal" ref={notificationModalRef}>
-          {/* 로그인 작업 후 모달 구현 필요 */}
-          <div className="notification-content">
-            <h2>업데이트</h2>
-            <p>내용</p>
+
+      <div>
+        <Link href="/video" passHref>
+          <div className="video-link">
+            <Image
+              src="/icon/Video.svg"
+              alt="video"
+              loader={() => "/icon/Video.svg"}
+              fill
+            />
           </div>
-        </div>
-      )}
-      <Link href="" passHref>
-        <div className="message-link" onClick={openMessage}>
-          <Image
-            src="/icon/Message.svg"
-            alt="message"
-            loader={() => "/icon/Message.svg"}
-            width={32}
-            height={26}
-          />
-        </div>
-      </Link>
-      {isMessageOpen && (
-        <div className="message-modal" ref={messageModalRef}>
-          {/* 로그인 작업 후 모달 구현 필요 */}
-          <div className="message-content">
-            <h2>받은 메시지</h2>
-            <p>내용</p>
+        </Link>
+        <Link href="" passHref>
+          <div className="notification-link" onClick={openNotification}>
+            <Image
+              src="/icon/Notification.svg"
+              alt="notification"
+              loader={() => "/icon/Notification.svg"}
+              fill
+            />
           </div>
-        </div>
-      )}
-      <Link href="/profil" passHref>
-        <div className="profil-link">
-          <Image
-            src="/icon/Profil.svg"
-            alt="profil"
-            loader={() => "/icon/Profil.svg"}
-            width={35}
-            height={35}
-          />
-        </div>
-      </Link>
-      <Link href="/login">
-        <div className="login-link">로그인</div>
-      </Link>
-      <Link href="" passHref>
-        <div className="more-link" onClick={openMore}>
-          <Image
-            src="/icon/Morebutton.svg"
-            alt="more"
-            loader={() => "/icon/Morebutton.svg"}
-            width={18}
-            height={20}
-          />
-        </div>
-      </Link>
-      {isMoreOpen && (
-        <div className="more-modal" ref={moreModalRef}>
-          {/* 로그인 작업 후 모달 구현 필요 */}
-          <div className="more-content">
-            <p>나의 공부방</p>
-            <p>내가 문의한 글</p>
-            <p>회원정보 수정</p>
-            <p>로그아웃</p>
+        </Link>
+        {isNotificationOpen && (
+          <div className="notification-modal" ref={notificationModalRef}>
+            {/* 로그인 작업 후 모달 구현 필요 */}
+            <div className="notification-content">
+              <h2>업데이트</h2>
+              <p>내용</p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+        <Link href="" passHref>
+          <div className="message-link" onClick={openMessage}>
+            <Image
+              src="/icon/Message.svg"
+              alt="message"
+              loader={() => "/icon/Message.svg"}
+              fill
+            />
+          </div>
+        </Link>
+        {isMessageOpen && (
+          <div className="message-modal" ref={messageModalRef}>
+            {/* 로그인 작업 후 모달 구현 필요 */}
+            <div className="message-content">
+              <h2>받은 메시지</h2>
+              <p>내용</p>
+            </div>
+          </div>
+        )}
+        <Link href="/profil" passHref>
+          <div className="profil-link">
+            <Image
+              src="/icon/Profil.svg"
+              alt="profil"
+              loader={() => "/icon/Profil.svg"}
+              fill
+            />
+          </div>
+        </Link>
+        {accessToken ? (
+          <div className="login-link">{userNickName}</div>
+        ) : (
+          <Link href="/login">
+            <div className="login-link">로그인</div>
+          </Link>
+        )}
+        <Link href="" passHref>
+          <div className="more-link" onClick={openMore}>
+            <Image
+              src="/icon/Morebutton.svg"
+              alt="more"
+              loader={() => "/icon/Morebutton.svg"}
+              fill
+            />
+          </div>
+        </Link>
+        {isMoreOpen && (
+          <div className="more-modal" ref={moreModalRef}>
+            {/* 로그인 작업 후 모달 구현 필요 */}
+            <div>
+              <Link href="" passHref>
+                <p className="more-content">나의 공부방</p>
+              </Link>
+              <Link href="" passHref className="more-content">
+                <p className="more-content">내가 문의한 글</p>
+              </Link>
+              <Link href="" passHref className="more-content">
+                <p className="more-content">회원정보 수정</p>
+              </Link>
+              {accessToken ? (
+                <button className="more-logout" onClick={handleLogout}>
+                  로그아웃
+                </button>
+              ) : null}
+            </div>
+          </div>
+        )}
+      </div>
       {/* CSS */}
       <style jsx>{`
         nav {
-          width: 120rem;
+          width: 100%;
           height: 4.125rem;
           background: #229eeb;
           display: flex;
@@ -257,7 +287,7 @@ export default function NavBar() {
           position: absolute;
           z-index: 1000;
           width: 6rem;
-          height: 8.8125rem;
+          height: 9rem;
           border-radius: 1rem;
           border: 1px solid #e9f7ff;
           background: #229eeb;
@@ -274,6 +304,14 @@ export default function NavBar() {
           font-size: ${Font.Size.S};
           font-weight: 500;
           text-align: center;
+        }
+
+        .more-logout {
+          color: #fff;
+          font-size: ${Font.Size.S};
+          font-weight: 500;
+          display: flex;
+          margin: 0 auto;
         }
 
         .message-link {
