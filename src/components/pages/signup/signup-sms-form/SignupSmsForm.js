@@ -2,7 +2,7 @@ import { Font } from "/public/fonts/Font";
 import { phoneNumberState } from "/src/recoil/atoms/Atoms";
 import { useRecoilState } from "recoil";
 import React, { useState } from "react";
-import { certificationPhoneNumber } from "@/apis/auth/sms";
+import { certificationPhoneNumber } from "@/apis/auth/signup/sms";
 
 export default function SignupSmsForm() {
   // Recoil

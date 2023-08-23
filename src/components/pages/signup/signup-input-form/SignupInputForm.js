@@ -5,10 +5,7 @@ import SignupEmailForm from "@/components/pages/signup/signup-email-form/SignupE
 import SignupSmsForm from "@/components/pages/signup/signup-sms-form/SignupSmsForm";
 import { Font } from "/public/fonts/Font";
 import { nameState, nicknameState, passwordState } from "@/recoil/atoms/Atoms";
-import {
-  checkEmailDuplicate,
-  checkNicknameDuplicate,
-} from "@/apis/auth/duplicateCheck";
+import { checkNicknameDuplicate } from "@/apis/auth/signup/duplicateCheck";
 
 export default function SignupInputForm() {
   // Recoil

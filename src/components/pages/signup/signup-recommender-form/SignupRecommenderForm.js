@@ -10,7 +10,7 @@ import {
   phoneNumberState,
 } from "/src/recoil/atoms/Atoms";
 import { useRecoilState } from "recoil";
-import { signup } from "@/apis/auth/signup";
+import { signup } from "@/apis/auth/signup/signup";
 
 export default function SignupRecommenderForm() {
   // Recoil

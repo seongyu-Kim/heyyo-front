@@ -1,7 +1,7 @@
 import { Font } from "/public/fonts/Font";
 import { emailState } from "/src/recoil/atoms/Atoms";
 import { useRecoilState } from "recoil";
-import { checkEmailDuplicate } from "@/apis/auth/duplicateCheck";
+import { checkEmailDuplicate } from "@/apis/auth/signup/duplicateCheck";
 import React, { useState } from "react";
 
 export default function SignupEmailForm() {
