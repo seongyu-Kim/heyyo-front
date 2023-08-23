@@ -22,6 +22,14 @@ const nextConfig = {
         source: "/api/users/sms/:phoneNumber",
         destination: "http://3.35.176.114:8080/api/users/sms/:phoneNumber",
       },
+      {
+        source: "/api/users/login",
+        destination: "http://3.35.176.114:8080/api/users/login",
+      },
+      {
+        source: "/api/logout",
+        destination: "http://3.35.176.114:8080/api/logout",
+      },
     ];
   },
 };
