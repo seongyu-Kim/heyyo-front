@@ -1,3 +1,4 @@
+import * as style from "@/components/pages/signup/signup-right-tab/SignupRightTab.style";
 import React, { useRef, useState } from "react";
 import SwiperCore, { Virtual } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,30 +18,30 @@ export default function SignupRightTab() {
   };
 
   return (
-    <div className="sign-right-tab">
+    <style.SignRightTabContainer>
       {isSignupPageContent && (
-        <div className="scroll-down-button">
+        <style.ScrollDownButton>
           <Image
-            src="/icon/ScrollDownButton.svg"
+            src="/assets/icon/ScrollDownButton.svg"
             alt="scrollupbutton"
-            loader={() => "/icon/ScrollDownButton.svg"}
+            loader={() => "/assets/icon/ScrollDownButton.svg"}
             width={24}
             height={24}
             onClick={() => swiperRef.current?.slideNext()}
           />
-        </div>
+        </style.ScrollDownButton>
       )}
       {!isSignupPageContent && (
-        <div className="scroll-up-button">
+        <style.ScrollUpButton>
           <Image
-            src="/icon/ScrollUpButton.svg"
+            src="/assets/icon/ScrollUpButton.svg"
             alt="scrollupbutton"
-            loader={() => "/icon/ScrollUpButton.svg"}
+            loader={() => "/assets/icon/ScrollUpButton.svg"}
             width={24}
             height={24}
             onClick={() => swiperRef.current?.slidePrev()}
           />
-        </div>
+        </style.ScrollUpButton>
       )}
       <Swiper
         style={{ width: "100%", height: "100%" }}
@@ -62,43 +63,6 @@ export default function SignupRightTab() {
           <SignupRecommenderForm />
         </SwiperSlide>
       </Swiper>
-
-      {/* CSS */}
-      <style jsx>
-        {`
-          .sign-right-tab {
-            position: absolute;
-            overflow: hidden;
-            width: 41.5rem;
-            height: 37.4375rem;
-            background: #fff;
-            box-shadow: 4px 4px 30px 2px rgba(0, 0, 0, 0.1);
-            left: 48.63rem;
-            right: 29.88rem;
-            top: 17.81rem;
-            bottom: 12.25rem;
-          }
-
-          .scroll-up-button {
-            position: absolute;
-            max-width: 100%;
-            width: 62.5rem;
-            height: 1.5rem;
-            left: 50%;
-            top: 2.52rem;
-            z-index: 100;
-          }
-          .scroll-down-button {
-            position: absolute;
-            max-width: 100%;
-            width: 62.5rem;
-            height: 1.5rem;
-            left: 50%;
-            bottom: 1.02rem;
-            z-index: 100;
-          }
-        `}
-      </style>
-    </div>
+    </style.SignRightTabContainer>
   );
 }

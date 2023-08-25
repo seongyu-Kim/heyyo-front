@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Font } from "/public/fonts/Font";
+import * as style from "@/components/pages/login/find-link-box/FindLinkBox.style";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import PwFindModal from "/src/components/pages/login/pw-find-modal/PwFindModal";
 
 export default function FindLinkBox() {
@@ -33,59 +33,18 @@ export default function FindLinkBox() {
   }, [isPwFindOpen]);
 
   return (
-    <div className="box">
+    <style.BoxDiv>
       <Link href="" passHref>
-        <div className="find" onClick={openPwFind}>
-          잊으셨나요?
-        </div>
+        <style.FindDiv onClick={openPwFind}>잊으셨나요?</style.FindDiv>
       </Link>
       {isPwFindOpen && (
-        <div className="pw-modal-container" ref={pwFindModalRef}>
+        <style.PwModalWrapper ref={pwFindModalRef}>
           <PwFindModal onClose={closePwFind} />
-        </div>
+        </style.PwModalWrapper>
       )}
       <Link href="/signup" passHref>
-        <div className="sign">회원가입</div>
+        <style.SignDiv>회원가입</style.SignDiv>
       </Link>
-
-      {/* CSS */}
-      <style jsx>
-        {`
-          .box {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            padding-bottom: 1.37rem;
-          }
-          .find {
-            position: relative;
-            color: #8c9499;
-            text-align: center;
-            font-size: ${Font.Size.XS};
-            font-weight: 400;
-            padding: 0 0.5rem;
-          }
-
-          .sign {
-            position: relative;
-            color: #8c9499;
-            text-align: center;
-            font-size: ${Font.Size.XS};
-            font-weight: 400;
-            padding: 0 0.5rem;
-          }
-
-          .pw-modal-container {
-            position: fixed;
-            top: 19.75rem;
-            left: 33rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-          }
-        `}
-      </style>
-    </div>
+    </style.BoxDiv>
   );
 }

@@ -1,6 +1,7 @@
+import * as style from "@/components/pages/signup/signup-recommender-form/SignupRecommenderForm.style";
 import React, { useState } from "react";
 import SignupTermsForm from "@/components/pages/signup/signup-terms-form/SignupTermsForm";
-import { Font } from "/public/fonts/Font";
+import { useRecoilState } from "recoil";
 import {
   recommendNicknameState,
   nameState,
@@ -9,7 +10,6 @@ import {
   emailState,
   phoneNumberState,
 } from "/src/recoil/atoms/Atoms";
-import { useRecoilState } from "recoil";
 import { signup } from "@/apis/auth/signup/signup";
 
 export default function SignupRecommenderForm() {
@@ -67,70 +67,27 @@ export default function SignupRecommenderForm() {
 
   return (
     <form onSubmit={handleSignup}>
-      <div>
-        <div className="nickname-container">
-          <span>
-            <input
+      <style.BoxDiv>
+        <style.NickNameContainer>
+          <style.NickNameSpan>
+            <style.NickNameInput
               id="nickname"
               value={recommendNickname}
               onChange={(e) => setRecommendNickname(e.target.value)}
-              className="nickname-input"
               type="text"
               placeholder="추천인 닉네임을 입력해주세요."
             />
-          </span>
+          </style.NickNameSpan>
           <SignupTermsForm onCheckItemsChange={handleCheckItemsChange} />
-          <div className="button-container">
-            <span>
-              <button className="nickname-button" type="submit">
+          <style.ButtonWrapper>
+            <style.ButtonSpan>
+              <style.NickNameButton type="submit">
                 가입하기
-              </button>
-            </span>
-          </div>
-        </div>
-
-        {/* CSS */}
-        <style jsx>{`
-          .nickname-container {
-            margin-top: 14.44rem;
-            margin-bottom: 1.37rem;
-            margin-left: 5.66rem;
-          }
-
-          .nickname-input {
-            width: 18.375rem;
-            height: 2.125rem;
-            padding: 18px;
-            border: none;
-            border-radius: 0.5625rem;
-            background: #e9f7ff;
-            left: 6.25rem;
-            top: 14.44rem;
-            margin-bottom: 1.37rem;
-
-            /* Placeholder 스타일 지정 */
-            ::placeholder {
-              color: #000;
-              text-align: center;
-              font-size: ${Font.Size.S};
-              font-weight: 400;
-              line-height: 129.8%;
-            }
-          }
-
-          .nickname-button {
-            width: 28.1875rem;
-            height: 2.125rem;
-            border-radius: 0.5625rem;
-            background: #229eeb;
-
-            color: #fff;
-            text-align: center;
-            font-size: ${Font.Size.S};
-            font-weight: 900;
-          }
-        `}</style>
-      </div>
+              </style.NickNameButton>
+            </style.ButtonSpan>
+          </style.ButtonWrapper>
+        </style.NickNameContainer>
+      </style.BoxDiv>
     </form>
   );
 }

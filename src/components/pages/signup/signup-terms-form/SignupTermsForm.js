@@ -1,6 +1,11 @@
+import * as style from "@/components/pages/signup/signup-terms-form/SignupTermsForm.style";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Font } from "/public/fonts/Font";
+import {
+  CheckboxLabel,
+  HiddenInput,
+  TermsTr,
+} from "@/components/pages/signup/signup-terms-form/SignupTermsForm.style";
 
 export default function SignupTermsForm({ onCheckItemsChange }) {
   const data = [
@@ -35,14 +40,14 @@ export default function SignupTermsForm({ onCheckItemsChange }) {
   };
 
   return (
-    <div>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <td style={{ width: "20px" }}>
-                <label className="custom-checkbox">
-                  <input
+    <style.BoxDiv>
+      <style.TermsContainer>
+        <style.TermsTable>
+          <style.TermsThead>
+            <style.TermsTr>
+              <style.TermsCheckTd>
+                <style.CheckboxLabel>
+                  <style.HiddenInput
                     type="checkbox"
                     name="select-all"
                     onChange={(e) => handleAllCheck(e.target.checked)}
@@ -50,39 +55,39 @@ export default function SignupTermsForm({ onCheckItemsChange }) {
                   />
                   {checkItems.length === data.length ? (
                     <Image
-                      src="/icon/Checked_Checkbox.svg"
+                      src="/assets/icon/Checked_Checkbox.svg"
                       alt="Checked"
                       width={20}
                       height={20}
                     />
                   ) : (
                     <Image
-                      src="/icon/Unchecked_Checkbox.svg"
+                      src="/assets/icon/Unchecked_Checkbox.svg"
                       alt="Unchecked"
                       width={20}
                       height={20}
                     />
                   )}
-                </label>
-              </td>
-              <td className="terms-all">약관 전체동의</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td colSpan="2" className="line"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div className="data">
-        <table>
-          <tbody>
+                </style.CheckboxLabel>
+              </style.TermsCheckTd>
+              <style.TermsAllTd>약관 전체동의</style.TermsAllTd>
+            </style.TermsTr>
+          </style.TermsThead>
+          <style.TermsTbody>
+            <style.TermsTr>
+              <style.TermsLineTd colSpan="2"></style.TermsLineTd>
+            </style.TermsTr>
+          </style.TermsTbody>
+        </style.TermsTable>
+      </style.TermsContainer>
+      <style.DataDiv>
+        <style.TermsTable>
+          <style.TermsTbody>
             {data?.map((item) => (
-              <tr key={item.id}>
-                <td>
-                  <label className="custom-checkbox">
-                    <input
+              <TermsTr key={item.id}>
+                <style.TermsTd>
+                  <style.CheckboxLabel>
+                    <style.HiddenInput
                       type="checkbox"
                       name={`select-${item.id}`}
                       onChange={(e) =>
@@ -92,89 +97,34 @@ export default function SignupTermsForm({ onCheckItemsChange }) {
                     />
                     {checkItems.includes(item.id) ? (
                       <Image
-                        src="/icon/Checked_Checkbox.svg"
+                        src="/assets/icon/Checked_Checkbox.svg"
                         alt="Checked"
                         width={20}
                         height={20}
                       />
                     ) : (
                       <Image
-                        src="/icon/Unchecked_Checkbox.svg"
+                        src="/assets/icon/Unchecked_Checkbox.svg"
                         alt="Unchecked"
                         width={20}
                         height={20}
                       />
                     )}
-                  </label>
-                </td>
-                <td className="terms-data">{item.title}</td>
-                <td>
-                  <button
-                    className="terms-button"
+                  </style.CheckboxLabel>
+                </style.TermsTd>
+                <style.TermsData>{item.title}</style.TermsData>
+                <style.TermsTd>
+                  <style.TermsButton
                     onClick={() => alert(item.title + "의 내용 보기")}
                   >
                     내용 보기
-                  </button>
-                </td>
-              </tr>
+                  </style.TermsButton>
+                </style.TermsTd>
+              </TermsTr>
             ))}
-          </tbody>
-        </table>
-      </div>
-
-      <style jsx>
-        {`
-          .line {
-            width: 27.9375rem;
-            height: 0.0625rem;
-            background: url("/icon/TermsLine.svg") no-repeat;
-          }
-
-          .terms-all {
-            width: 14.0625rem;
-            height: 1.25rem;
-            flex-shrink: 0;
-            color: #000;
-            font-size: ${Font.Size.S};
-            font-weight: 700;
-          }
-
-          .terms-data {
-            width: 14.0625rem;
-            height: 1.25rem;
-            flex-shrink: 0;
-            color: #000;
-            font-size: ${Font.Size.S};
-            font-weight: 400;
-          }
-
-          .data {
-            margin-top: 0.94rem;
-            margin-bottom: 1.87rem;
-          }
-
-          /* 체크박스 숨기기 */
-          input[type="checkbox"] {
-            display: none;
-          }
-
-          /* 커스텀 체크박스 */
-          .custom-checkbox {
-            display: inline-block;
-            cursor: pointer;
-            margin-right: 0.28rem;
-          }
-
-          .terms-button {
-            color: #8c9499;
-            text-align: right;
-            font-size: ${Font.Size.XS};
-            font-weight: 400;
-            text-decoration-line: underline;
-            margin-left: 9.38rem;
-          }
-        `}
-      </style>
-    </div>
+          </style.TermsTbody>
+        </style.TermsTable>
+      </style.DataDiv>
+    </style.BoxDiv>
   );
 }

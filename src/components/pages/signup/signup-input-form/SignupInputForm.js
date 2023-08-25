@@ -1,11 +1,11 @@
+import * as style from "@/components/pages/signup/signup-input-form/SignupInputForm.style";
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
-import Image from "next/image";
+import { nameState, nicknameState, passwordState } from "@/recoil/atoms/Atoms";
 import SignupEmailForm from "@/components/pages/signup/signup-email-form/SignupEmailForm";
 import SignupSmsForm from "@/components/pages/signup/signup-sms-form/SignupSmsForm";
-import { Font } from "/public/fonts/Font";
-import { nameState, nicknameState, passwordState } from "@/recoil/atoms/Atoms";
 import { checkNicknameDuplicate } from "@/apis/auth/signup/duplicateCheck";
+import Image from "next/image";
 
 export default function SignupInputForm() {
   // Recoil
@@ -70,219 +70,109 @@ export default function SignupInputForm() {
   };
 
   return (
-    <div className="box">
-      <div>
-        <span>
-          <input
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="signup-input"
-            type="text"
-            placeholder="이름을 입력해주세요."
-          />
-        </span>
-      </div>
-      <div className="signup-input-wrapper">
-        <label>
-          <input
+    <style.BoxDiv>
+      <style.NameDiv>
+        <style.SignupInput
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          type="text"
+          placeholder="이름을 입력해주세요."
+        />
+      </style.NameDiv>
+      <style.NickNameDiv>
+        <style.NickNameLabel>
+          <style.SignupInput
             id="nickname"
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
-            className="signup-input"
             type="text"
             placeholder="닉네임을 입력해주세요."
           />
-          <button className="nickname-button" onClick={handleNicknameCheck}>
+          <style.NickNameButton onClick={handleNicknameCheck}>
             중복확인
-          </button>
-        </label>
-        <p
-          className={
-            duplicateNicknameStatus?.isDuplicateNickname
-              ? "error-message"
-              : "success-message"
-          }
-        >
-          {duplicateNicknameStatus?.message}
-        </p>
-      </div>
+          </style.NickNameButton>
+        </style.NickNameLabel>
+        {duplicateNicknameStatus?.isDuplicateNickname ? (
+          <style.ErrorMessage>
+            {duplicateNicknameStatus?.message}
+          </style.ErrorMessage>
+        ) : (
+          <style.SuccessMessage>
+            {duplicateNicknameStatus?.message}
+          </style.SuccessMessage>
+        )}
+      </style.NickNameDiv>
 
-      <div className="pw-wrapper">
-        <span>
-          <input
-            id="pw"
-            value={password}
-            className="signup-input"
-            type={showPasswordInput ? "text" : "password"}
-            placeholder="비밀번호 입력"
-            onChange={handlePasswordChange}
+      <style.PasswordDiv>
+        <style.SignupInput
+          id="pw"
+          value={password}
+          type={showPasswordInput ? "text" : "password"}
+          placeholder="비밀번호 입력"
+          onChange={handlePasswordChange}
+        />
+        <style.PasswordImageDiv>
+          <Image
+            src={
+              showPasswordInput
+                ? "/assets/icon/PasswordVisibleIcon.svg"
+                : "/assets/icon/PasswordInvisibleIcon.svg"
+            }
+            alt="password"
+            loader={({}) =>
+              showPasswordInput
+                ? `/assets/icon/PasswordVisibleIcon.svg`
+                : `/assets/icon/PasswordInvisibleIcon.svg`
+            }
+            width={14}
+            height={14}
+            onClick={togglePasswordInputVisibility}
           />
-          <div className="pw">
-            <Image
-              src={
-                showPasswordInput
-                  ? "/icon/PasswordVisibleIcon.svg"
-                  : "/icon/PasswordInvisibleIcon.svg"
-              }
-              alt="password"
-              loader={({}) =>
-                showPasswordInput
-                  ? `/icon/PasswordVisibleIcon.svg`
-                  : `/icon/PasswordInvisibleIcon.svg`
-              }
-              width={14}
-              height={14}
-              onClick={togglePasswordInputVisibility}
-            />
-          </div>
-        </span>
-      </div>
-      <div className="pw-wrapper">
-        <span>
-          <input
-            id="pwConfirmation"
-            className="signup-input"
-            type={showPasswordConfirmation ? "text" : "password"}
-            placeholder="비밀번호 확인"
-            value={passwordConfirmation}
-            onChange={handlePasswordConfirmationChange}
+        </style.PasswordImageDiv>
+      </style.PasswordDiv>
+      <style.PasswordDiv>
+        <style.SignupInput
+          id="pwConfirmation"
+          type={showPasswordConfirmation ? "text" : "password"}
+          placeholder="비밀번호 확인"
+          value={passwordConfirmation}
+          onChange={handlePasswordConfirmationChange}
+        />
+        <style.PasswordImageDiv>
+          <Image
+            src={
+              showPasswordConfirmation
+                ? "/assets/icon/PasswordVisibleIcon.svg"
+                : "/assets/icon/PasswordInvisibleIcon.svg"
+            }
+            alt="password"
+            loader={({}) =>
+              showPasswordConfirmation
+                ? `/assets/icon/PasswordVisibleIcon.svg`
+                : `/assets/icon/PasswordInvisibleIcon.svg`
+            }
+            width={14}
+            height={14}
+            onClick={togglePasswordConfirmationVisibility}
           />
-          <div className="pw">
-            <Image
-              src={
-                showPasswordConfirmation
-                  ? "/icon/PasswordVisibleIcon.svg"
-                  : "/icon/PasswordInvisibleIcon.svg"
-              }
-              alt="password"
-              loader={({}) =>
-                showPasswordConfirmation
-                  ? `/icon/PasswordVisibleIcon.svg`
-                  : `/icon/PasswordInvisibleIcon.svg`
-              }
-              width={14}
-              height={14}
-              onClick={togglePasswordConfirmationVisibility}
-            />
-            <div>
-              {passwordConfirmation ? (
-                passwordMatchMessage === "일치" ? (
-                  <span className="message-o">비밀번호가 일치합니다.</span>
-                ) : (
-                  <span className="message-x">
-                    비밀번호가 일치하지 않습니다.
-                  </span>
-                )
-              ) : null}
-            </div>
+          <div>
+            {passwordConfirmation ? (
+              passwordMatchMessage === "일치" ? (
+                <style.PwMatchingMessage>
+                  비밀번호가 일치합니다.
+                </style.PwMatchingMessage>
+              ) : (
+                <style.PwMismatchMessage>
+                  비밀번호가 일치하지 않습니다.
+                </style.PwMismatchMessage>
+              )
+            ) : null}
           </div>
-        </span>
-      </div>
+        </style.PasswordImageDiv>
+      </style.PasswordDiv>
       <SignupEmailForm />
       <SignupSmsForm />
-
-      {/* CSS */}
-      <style jsx>
-        {`
-          .box {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-          }
-
-          .signup-input {
-            width: 18.375rem;
-            height: 2.125rem;
-            padding: 18px;
-            border: none;
-            border-radius: 0.5625rem;
-            background: #e9f7ff;
-            margin-left: 7.37rem;
-            margin-bottom: 0.94rem;
-
-            /* Placeholder 스타일 지정 */
-            ::placeholder {
-              color: #000;
-              text-align: center;
-              font-size: ${Font.Size.S};
-              font-weight: 400;
-              line-height: 129.8%;
-            }
-          }
-
-          .signup-input-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-          }
-
-          .nickname-button {
-            position: absolute;
-            width: 2.3125rem;
-            height: 0.875rem;
-            left: 22.62rem;
-            top: 0.69rem;
-
-            color: #8c9499;
-            text-align: center;
-            font-size: ${Font.Size.XS};
-            font-weight: 700;
-          }
-
-          .success-message {
-            color: #229eeb;
-            text-align: right;
-            font-size: ${Font.Size.XS};
-            font-weight: 700;
-            height: 1.6875rem;
-            margin-left: 0.5rem;
-          }
-
-          .error-message {
-            color: #f88;
-            text-align: right;
-            font-size: ${Font.Size.XS};
-            font-weight: 700;
-            text-decoration-line: underline;
-            height: 1.6875rem;
-            margin-left: 0.5rem;
-          }
-
-          .pw-wrapper {
-            position: relative;
-          }
-
-          .pw {
-            position: absolute;
-            left: 24rem;
-            right: 0.75rem;
-            top: 0.63rem;
-          }
-
-          .message-o {
-            position: absolute;
-            color: #229eeb;
-            text-align: right;
-            font-size: ${Font.Size.XS};
-            font-weight: 700;
-            top: 0.1525rem;
-            left: 2.19rem;
-          }
-
-          .message-x {
-            position: absolute;
-            color: #f88;
-            text-align: right;
-            font-size: ${Font.Size.XS};
-            font-weight: 700;
-            text-decoration-line: underline;
-            top: 0.1525rem;
-            left: 2.19rem;
-          }
-        `}
-      </style>
-    </div>
+    </style.BoxDiv>
   );
 }

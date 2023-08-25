@@ -1,61 +1,52 @@
-import Image from "next/image";
+import * as style from "@/components/pages/login/sns-login-box/SnsLoginBox.style";
 import { KAKAO_AUTH_URL } from "@/apis/auth/login/kakaoOAuth";
 import { NAVER_AUTH_URL } from "@/apis/auth/login/naverOAuth";
 import { GOOGLE_AUTH_URL } from "@/apis/auth/login/googleOAuth";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SnsLoginBox() {
   return (
-    <div className="box">
-      <div>
+    <style.BoxDiv>
+      <style.NaverDiv>
         <Link href={NAVER_AUTH_URL}>
-          <button>
+          <style.NaverButton>
             <Image
-              src="/icon/Naver.svg"
+              src="/assets/icon/Naver.svg"
               alt="naver"
-              loader={() => "/icon/Naver.svg"}
+              loader={() => "/assets/icon/Naver.svg"}
               width={40}
               height={40}
             />
-          </button>
+          </style.NaverButton>
         </Link>
-      </div>
-      <div>
+      </style.NaverDiv>
+      <style.KakaoDiv>
         <Link href={KAKAO_AUTH_URL}>
-          <button>
+          <style.KakaoButton>
             <Image
-              src="/icon/Kakao.svg"
+              src="/assets/icon/Kakao.svg"
               alt="kakao"
-              loader={() => "/icon/Kakao.svg"}
+              loader={() => "/assets/icon/Kakao.svg"}
               width={40}
               height={40}
             />
-          </button>
+          </style.KakaoButton>
         </Link>
-      </div>
-      <div>
+      </style.KakaoDiv>
+      <style.GoogleDiv>
         <Link href={GOOGLE_AUTH_URL}>
-          <button>
+          <style.GoogleButton>
             <Image
-              src="/icon/Google.svg"
+              src="/assets/icon/Google.svg"
               alt="google"
-              loader={() => "/icon/Google.svg"}
+              loader={() => "/assets/icon/Google.svg"}
               width={40}
               height={40}
             />
-          </button>
+          </style.GoogleButton>
         </Link>
-      </div>
-
-      {/* CSS */}
-      <style jsx>
-        {`
-          .box {
-            display: flex;
-            justify-content: center;
-          }
-        `}
-      </style>
-    </div>
+      </style.GoogleDiv>
+    </style.BoxDiv>
   );
 }
