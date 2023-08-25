@@ -1,17 +1,16 @@
 import "@/styles/globals.css";
-import { fontStyles } from "/public/fonts/Font";
 import { createGlobalStyle } from "styled-components";
 import PageHead from "@/components/common/page-head/PageHead";
 import NavBar from "@/components/common/navbar/NavBar";
 import { RecoilRoot } from "recoil";
 import axios from "axios";
+import "@/assets/fonts/font.css";
 
 function getAuthTokenFromLocalStorage() {
   return sessionStorage.getItem("authToken");
 }
 
 const GlobalStyles = createGlobalStyle`
-        ${fontStyles}
 
         .container {
         display: flex;
