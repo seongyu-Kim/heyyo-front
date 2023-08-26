@@ -23,8 +23,8 @@ export const PwModalWrapper = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  top: 31.6rem;
-  left: 52.8rem;
+  top: calc(50vh - 0.3rem - (53.7rem * 0.5));
+  left: calc(50vw - (86.4rem * 0.5));
 `;
 
 export const SignDiv = styled.div`
