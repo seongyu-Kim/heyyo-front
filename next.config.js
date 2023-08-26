@@ -30,6 +30,11 @@ const nextConfig = {
         source: "/api/logout",
         destination: "http://15.165.120.144:8080/api/logout",
       },
+      {
+        source: "/api/users/passwords/:name/:email",
+        destination:
+          "http://15.165.120.144:8080/api/users/passwords/:name/:email",
+      },
     ];
   },
 };

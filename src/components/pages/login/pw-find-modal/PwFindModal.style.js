@@ -54,7 +54,19 @@ export const PwFindTextDiv = styled.div`
   margin-left: 24.3rem;
 `;
 
-export const PwFindTextAtag = styled.a``;
+export const PwFindTextAtag = styled.a`
+  color: rgba(0, 0, 0, 0.8);
+  font-size: ${Font.Size.S};
+  font-weight: 400;
+  line-height: 129.8%;
+`;
+
+export const PwFindTextAtag2 = styled.a`
+  color: #ff3838;
+  font-size: ${Font.Size.S};
+  font-weight: 400;
+  line-height: 129.8%;
+`;
 
 export const PwFindBr = styled.br``;
 
@@ -76,11 +88,11 @@ export const PwFindButton = styled.button`
 
 export const PwFindOn = styled.div`
   position: absolute;
-  top: 9.87rem;
-  left: 13.81rem;
-  width: 26.375rem;
-  height: 10.625rem;
-  border-radius: 0.5625rem;
+  top: 15.8rem;
+  left: 22.1rem;
+  width: 42.2rem;
+  height: 17rem;
+  border-radius: 0.9rem;
   background: #e9f7ff;
   display: flex;
   justify-content: center;
