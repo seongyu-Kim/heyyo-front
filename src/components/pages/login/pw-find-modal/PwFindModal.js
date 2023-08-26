@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { emailState, nameState } from "@/recoil/atoms/Atoms";
 import { useRecoilState } from "recoil";
 import { findPassword } from "@/apis/auth/login/findPassword";
-import { PwFindTextAtag2 } from "@/components/pages/login/pw-find-modal/PwFindModal.style";
+import Image from "next/image";
 
 export default function PwFindModal({ onClose }) {
   const [isPwIssued, setIsPwIssued] = useState(false);
@@ -44,17 +44,35 @@ export default function PwFindModal({ onClose }) {
       </style.PwInputWrapper>
       <style.PwFindTextDiv>
         {isErrorOccurred ? (
-          <style.PwFindTextAtag2>
-            입력하신 정보와 일치하는 회원이 없습니다.
-            <style.PwFindBr />
-            이메일 또는 비밀번호를 확인해주세요.
-          </style.PwFindTextAtag2>
+          <style.PwFindTextBox>
+            <Image
+              src="/assets/icon/LoginError.svg"
+              alt="error"
+              loader={() => "/assets/icon/LoginError.svg"}
+              width={14}
+              height={14}
+            />
+            <style.PwFindTextAtag2>
+              입력하신 정보와 일치하는 회원이 없습니다.
+              <style.PwFindBr />
+              이메일 또는 비밀번호를 확인해주세요.
+            </style.PwFindTextAtag2>
+          </style.PwFindTextBox>
         ) : (
-          <style.PwFindTextAtag>
-            이메일로 임시 비밀번호가 발급됩니다.
-            <style.PwFindBr />
-            정확히 입력해주세요.
-          </style.PwFindTextAtag>
+          <style.PwFindTextBox>
+            <Image
+              src="/assets/icon/LoginSuccess.svg"
+              alt="error"
+              loader={() => "/assets/icon/LoginSuccess.svg"}
+              width={14}
+              height={14}
+            />
+            <style.PwFindTextAtag>
+              이메일로 임시 비밀번호가 발급됩니다.
+              <style.PwFindBr />
+              정확히 입력해주세요.
+            </style.PwFindTextAtag>
+          </style.PwFindTextBox>
         )}
       </style.PwFindTextDiv>
       {/* 임시 비밀번호 발급 성공 시 '로그인 하기' 버튼 보여지기 */}

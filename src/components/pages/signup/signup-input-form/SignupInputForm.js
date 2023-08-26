@@ -93,14 +93,31 @@ export default function SignupInputForm() {
             중복확인
           </style.NickNameButton>
         </style.NickNameLabel>
-        {duplicateNicknameStatus?.isDuplicateNickname ? (
+        {duplicateNicknameStatus !== null &&
+        duplicateNicknameStatus?.isDuplicateNickname ? (
           <style.ErrorMessage>
+            <Image
+              src="/assets/icon/SignupError.svg"
+              alt="error"
+              loader={() => "/assets/icon/SignupError.svg"}
+              width={10}
+              height={10}
+            />
             {duplicateNicknameStatus?.message}
           </style.ErrorMessage>
         ) : (
-          <style.SuccessMessage>
-            {duplicateNicknameStatus?.message}
-          </style.SuccessMessage>
+          duplicateNicknameStatus !== null && (
+            <style.SuccessMessage>
+              <Image
+                src="/assets/icon/SignupSuccess.svg"
+                alt="success"
+                loader={() => "/assets/icon/SignupSuccess.svg"}
+                width={10}
+                height={10}
+              />
+              {duplicateNicknameStatus?.message}
+            </style.SuccessMessage>
+          )
         )}
       </style.NickNameDiv>
 
@@ -160,10 +177,24 @@ export default function SignupInputForm() {
             {passwordConfirmation ? (
               passwordMatchMessage === "일치" ? (
                 <style.PwMatchingMessage>
+                  <Image
+                    src="/assets/icon/SignupSuccess.svg"
+                    alt="success"
+                    loader={() => "/assets/icon/SignupSuccess.svg"}
+                    width={10}
+                    height={10}
+                  />
                   비밀번호가 일치합니다.
                 </style.PwMatchingMessage>
               ) : (
                 <style.PwMismatchMessage>
+                  <Image
+                    src="/assets/icon/SignupError.svg"
+                    alt="error"
+                    loader={() => "/assets/icon/SignupError.svg"}
+                    width={10}
+                    height={10}
+                  />
                   비밀번호가 일치하지 않습니다.
                 </style.PwMismatchMessage>
               )

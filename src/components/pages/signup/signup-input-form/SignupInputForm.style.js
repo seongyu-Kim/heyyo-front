@@ -57,6 +57,9 @@ export const SuccessMessage = styled.p`
   text-align: right;
   font-size: ${Font.Size.XS};
   font-weight: 700;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   height: 1.2rem;
   margin-bottom: 2.8rem;
   margin-left: 0.5rem;
@@ -67,6 +70,9 @@ export const ErrorMessage = styled.p`
   font-size: ${Font.Size.XS};
   font-weight: 700;
   text-decoration-line: underline;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   height: 1.2rem;
   margin-bottom: 2.8rem;
   margin-left: 0.5rem;
@@ -86,6 +92,9 @@ export const PasswordImageDiv = styled.div`
 export const PwMatchingMessage = styled.span`
   position: absolute;
   color: #229eeb;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   text-align: right;
   font-size: ${Font.Size.XS};
   font-weight: 700;
@@ -96,6 +105,9 @@ export const PwMatchingMessage = styled.span`
 export const PwMismatchMessage = styled.span`
   position: absolute;
   color: #f88;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   text-align: right;
   font-size: ${Font.Size.XS};
   font-weight: 700;

@@ -51,7 +51,7 @@ export const PwFindTextDiv = styled.div`
   line-height: 129.8%;
   margin-top: 15.8rem;
   margin-bottom: 2.9rem;
-  margin-left: 24.3rem;
+  margin-left: 22.2rem;
 `;
 
 export const PwFindTextAtag = styled.a`
@@ -61,6 +61,10 @@ export const PwFindTextAtag = styled.a`
   line-height: 129.8%;
 `;
 
+export const PwFindTextBox = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
 export const PwFindTextAtag2 = styled.a`
   color: #ff3838;
   font-size: ${Font.Size.S};

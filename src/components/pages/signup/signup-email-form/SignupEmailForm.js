@@ -3,12 +3,16 @@ import React, { useState } from "react";
 import { emailState } from "/src/recoil/atoms/Atoms";
 import { useRecoilState } from "recoil";
 import { checkEmailDuplicate } from "@/apis/auth/signup/duplicateCheck";
+import { SignupEmailDuplicate } from "@/components/pages/signup/signup-email-form/signup-email-duplicate/SignupEmailDuplicate";
 
 export default function SignupEmailForm() {
   // Recoil
   const [email, setEmail] = useRecoilState(emailState);
 
-  const [duplicateEmailStatus, setDuplicateEmailStatus] = useState(null);
+  const [duplicateEmailStatus, setDuplicateEmailStatus] = useState({
+    isDuplicateEmail: false,
+    message: "init",
+  });
   const [emailFormatError, setEmailFormatError] = useState(false);
 
   // 이메일 정규식
@@ -20,7 +24,6 @@ export default function SignupEmailForm() {
 
     if (!emailRegEx.test(inputEmail)) {
       setEmailFormatError(true);
-      setDuplicateEmailStatus(null);
       return;
     }
 
@@ -55,17 +58,12 @@ export default function SignupEmailForm() {
             중복확인
           </style.NickNameButton>
         </style.EmailLabel>
-        {duplicateEmailStatus?.isDuplicateEmail || emailFormatError ? (
-          <style.ErrorMessage>
-            {duplicateEmailStatus?.message ||
-              (emailFormatError && "잘못된 이메일 형식 입니다.")}
-          </style.ErrorMessage>
-        ) : (
-          <style.SuccessMessage>
-            {duplicateEmailStatus?.message ||
-              (emailFormatError && "잘못된 이메일 형식 입니다.")}
-          </style.SuccessMessage>
-        )}
+
+        <SignupEmailDuplicate
+          isDuplicateEmail={duplicateEmailStatus.isDuplicateEmail}
+          message={duplicateEmailStatus.message}
+          emailFormatError={emailFormatError}
+        />
       </style.EmailContainer>
     </style.BoxDiv>
   );

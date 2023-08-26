@@ -52,8 +52,11 @@ export const SuccessMessage = styled.p`
   color: #229eeb;
   text-align: right;
   font-size: ${Font.Size.XS};
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   font-weight: 700;
-  top: 0.1525rem;
+  top: 0.2rem;
   margin-left: 0.5rem;
 `;
 
@@ -61,6 +64,9 @@ export const ErrorMessage = styled.p`
   color: #f88;
   text-align: right;
   font-size: ${Font.Size.XS};
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   font-weight: 700;
   text-decoration-line: underline;
   top: 0.56rem;
