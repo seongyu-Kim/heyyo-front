@@ -1,8 +1,9 @@
 import * as style from "@/components/pages/signup/signup-sms-form/SignupSmsForm.style";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { phoneNumberState } from "/src/recoil/atoms/Atoms";
 import { certificationPhoneNumber } from "@/apis/auth/signup/sms";
+import Image from "next/image";
 
 export default function SignupSmsForm() {
   // Recoil
@@ -14,9 +15,32 @@ export default function SignupSmsForm() {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [verificationSent, setVerificationSent] = useState(false);
   const [phoneNumberFormatError, setPhoneNumberFormatError] = useState(false);
+  const [resendTimeout, setResendTimeout] = useState(null);
+  const [remainingTime, setRemainingTime] = useState(0);
+  const [timerVisible, setTimerVisible] = useState(false);
 
   // 전화번호 정규식
   const phoneNumberRegEx = /^[0-9]{11}$/;
+
+  // 타이머
+  const startResendTimer = () => {
+    setVerificationSent(true);
+    setTimerVisible(true);
+    setRemainingTime(180);
+    setResendTimeout(
+      setInterval(() => {
+        setRemainingTime((prevTime) => {
+          if (prevTime <= 0) {
+            clearInterval(resendTimeout);
+            setResendTimeout(null);
+            setRemainingTime(0);
+            setTimerVisible(false);
+          }
+          return prevTime - 1;
+        });
+      }, 1000),
+    );
+  };
 
   const handleSendVerificationCode = async () => {
     if (!phoneNumberRegEx.test(phoneNumber)) {
@@ -26,7 +50,7 @@ export default function SignupSmsForm() {
 
     const code = await certificationPhoneNumber(phoneNumber);
     setVerificationCode(code);
-    setVerificationSent(true);
+    startResendTimer();
     setPhoneNumberFormatError(false);
   };
 
@@ -38,6 +62,18 @@ export default function SignupSmsForm() {
     } else {
       setVerificationSuccess(false);
     }
+  };
+
+  useEffect(() => {
+    return () => {
+      clearInterval(resendTimeout);
+    };
+  }, [resendTimeout]);
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
   return (
@@ -55,7 +91,6 @@ export default function SignupSmsForm() {
         <style.SmsSendButton
           className={`${verificationSent ? "sent" : ""}`}
           onClick={handleSendVerificationCode}
-          disabled={verificationSent}
         >
           {verificationSent ? "재전송" : "인증번호 전송"}
         </style.SmsSendButton>
@@ -79,10 +114,31 @@ export default function SignupSmsForm() {
           인증번호 확인
         </style.SmsButton>
         {verificationSuccess && (
-          <style.SuccessMessage>인증이 완료되었습니다.</style.SuccessMessage>
+          <style.SuccessMessage>
+            <Image
+              src="/assets/icon/SignupSuccess.svg"
+              alt="success"
+              loader={() => "/assets/icon/SignupSuccess.svg"}
+              width={10}
+              height={10}
+            />
+            인증이 완료되었습니다.
+          </style.SuccessMessage>
         )}
         {buttonClicked && !verificationSuccess && verificationCode && (
-          <style.ErrorMessage>인증번호가 일치하지 않습니다.</style.ErrorMessage>
+          <style.ErrorMessage>
+            <Image
+              src="/assets/icon/SignupError.svg"
+              alt="error"
+              loader={() => "/assets/icon/SignupError.svg"}
+              width={10}
+              height={10}
+            />
+            인증번호가 일치하지 않습니다.
+          </style.ErrorMessage>
+        )}
+        {!verificationSuccess && timerVisible && (
+          <style.Timer>{formatTime(remainingTime)}</style.Timer>
         )}
       </style.SmsContainer>
     </style.BoxDiv>

@@ -57,6 +57,14 @@ export const SmsSendButton = styled.button`
   }
 `;
 
+export const Timer = styled.p`
+  color: #f00;
+  font-size: ${Font.Size.S};
+  font-weight: 400;
+  line-height: 129.8%;
+  margin-left: 0.7rem;
+`;
+
 export const ErrorMessagePtag = styled.p`
   color: #f88;
   text-align: right;
@@ -72,6 +80,9 @@ export const SuccessMessage = styled.div`
   text-align: right;
   font-size: ${Font.Size.XS};
   font-weight: 700;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
   top: 0.1525rem;
   margin-left: 0.5rem;
 `;
@@ -81,6 +92,9 @@ export const ErrorMessage = styled.div`
   text-align: right;
   font-size: ${Font.Size.XS};
   font-weight: 700;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
   text-decoration-line: underline;
   top: 0.56rem;
   margin-left: 0.5rem;
