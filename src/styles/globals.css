@@ -10,8 +10,6 @@
 
 html {
   font-size: 62.5%;
-  overflow: hidden; /* 스크롤바 감춤 */
-
 }
 
 body {
