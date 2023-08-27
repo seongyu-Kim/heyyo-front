@@ -19,6 +19,9 @@ export const MenuUl = styled.ul`
 export const MenuLi = styled.li`
   margin-right: 26rem;
   list-style-type: none;
+  &:last-child {
+    margin-right: 0;
+  }
 `;
 
 export const MenuAtag = styled.p`
@@ -26,9 +29,6 @@ export const MenuAtag = styled.p`
   text-align: center;
   font-size: ${Font.Size.L};
   font-weight: 700;
-  &:last-child {
-    margin-right: 0;
-  }
 
   ${({ active }) =>
     active &&
