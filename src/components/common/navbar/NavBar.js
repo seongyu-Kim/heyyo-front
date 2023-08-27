@@ -101,7 +101,7 @@ export default function NavBar() {
       </Link>
 
       <style.MenuContainer>
-        <Link href="/video" passHref>
+        <Link href="/groupstudy" passHref>
           <style.VideoLinkDiv>
             <Image
               src="/assets/icon/Video.svg"

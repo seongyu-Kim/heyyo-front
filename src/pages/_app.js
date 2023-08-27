@@ -5,6 +5,7 @@ import NavBar from "@/components/common/navbar/NavBar";
 import { RecoilRoot } from "recoil";
 import axios from "axios";
 import "@/assets/fonts/font.css";
+import Header from "@/components/common/header/Header";
 
 function getAuthTokenFromLocalStorage() {
   return sessionStorage.getItem("authToken");
@@ -35,6 +36,7 @@ export default function App({ Component, pageProps }) {
         <GlobalStyles />
         <PageHead />
         <NavBar />
+        <Header />
         <Component {...pageProps} />
       </RecoilRoot>
     </>
