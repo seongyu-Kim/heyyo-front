@@ -6,6 +6,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import {
+  BoxContainer,
+  BtnContainer,
+  BtnContent,
+  BtnDiv,
+  CharContainer1,
+  CharContainer2,
+  TitleDiv,
+} from "@/components/pages/survey/survey-page/SurveyPage.style";
 
 export default function SurveyPage({
   handleNextPage,
@@ -69,98 +78,56 @@ export default function SurveyPage({
       onNavigationNext={NextPage}
       onNavigationPrev={PrevPage}
     >
-      <>
-        {Object.keys(surveyData).map((key) => (
-          <SwiperSlide key={key}>
-            <div>
-              <div className="container">
-                <h2 className="title">{surveyData[key].title}</h2>
-              </div>
-              <div className="container">
-                <button
-                  className="btn btnContent"
-                  onClick={() =>
-                    handleButtonSelect(surveyData[key].selectedBtn1)
-                  }
-                  style={{ background: btnHover1 }}
-                  onMouseEnter={() =>
-                    handleBtnHover1(surveyData[key].btnColor1)
-                  }
-                  onMouseLeave={handleBtnLeave1}
-                >
-                  <div
-                    dangerouslySetInnerHTML={{ __html: surveyData[key].btn1 }}
-                  />
-                </button>
-                <div
-                  style={{
-                    position: "absolute",
-                    top: surveyData[key].top1,
-                    left: surveyData[key].left1,
-                    zIndex: surveyData[key].zIndex1,
-                  }}
-                >
-                  <Image
-                    src={surveyData[key].img1}
-                    width={surveyData[key].width1}
-                    height={surveyData[key].height1}
-                    alt="survey"
-                  />
-                </div>
-                <button
-                  className="btn btnContent"
-                  onClick={() =>
-                    handleButtonSelect(surveyData[key].selectedBtn2)
-                  }
-                  style={{ background: btnHover2 }}
-                  onMouseEnter={() =>
-                    handleBtnHover2(surveyData[key].btnColor2)
-                  }
-                  onMouseLeave={handleBtnLeave2}
-                >
-                  <div
-                    dangerouslySetInnerHTML={{ __html: surveyData[key].btn2 }}
-                  />
-                </button>
-                <div
-                  style={{
-                    position: "absolute",
-                    top: surveyData[key].top2,
-                    left: surveyData[key].left2,
-                    zIndex: surveyData[key].zIndex2,
-                  }}
-                >
-                  <Image
-                    src={surveyData[key].img2}
-                    width={surveyData[key].width2}
-                    height={surveyData[key].height2}
-                    alt="survey"
-                  />
-                </div>
-              </div>
-            </div>
+      {Object.keys(surveyData).map((key) => (
+        <SwiperSlide key={key}>
+          <TitleDiv>{surveyData[key].title}</TitleDiv>
+          <BtnContainer>
+            <BoxContainer>
+              <CharContainer1
+                top={surveyData[key].top1}
+                left={surveyData[key].left1}
+                width={surveyData[key].width1}
+                height={surveyData[key].height1}
+                zIndex={surveyData[key].zIndex1}
+              >
+                <Image src={surveyData[key].img1} alt="CharImage" fill />
+              </CharContainer1>
+              <BtnDiv
+                onClick={() => handleButtonSelect(surveyData[key].selectedBtn1)}
+                background={btnHover1}
+                onMouseEnter={() => handleBtnHover1(surveyData[key].btnColor1)}
+                onMouseLeave={handleBtnLeave1}
+              >
+                <BtnContent
+                  dangerouslySetInnerHTML={{ __html: surveyData[key].btn1 }}
+                />
+              </BtnDiv>
+            </BoxContainer>
+            <BoxContainer>
+              <CharContainer2
+                top={surveyData[key].top2}
+                left={surveyData[key].left2}
+                width={surveyData[key].width2}
+                height={surveyData[key].height2}
+                zIndex={surveyData[key].zIndex2}
+              >
+                <Image src={surveyData[key].img2} alt="CharImage" fill />
+              </CharContainer2>
 
-            <style jsx>{`
-              .title {
-                margin-top: 219px;
-              }
-              .btn {
-                width: 310px;
-                height: 290px;
-                margin: 138.5px 45px;
-
-                border-radius: 37px;
-                z-index: 1;
-              }
-              .btnContent {
-                color: #000;
-                font-size: 36px;
-                font-weight: 700;
-              }
-            `}</style>
-          </SwiperSlide>
-        ))}
-      </>
+              <BtnDiv
+                onClick={() => handleButtonSelect(surveyData[key].selectedBtn2)}
+                background={btnHover2}
+                onMouseEnter={() => handleBtnHover2(surveyData[key].btnColor2)}
+                onMouseLeave={handleBtnLeave2}
+              >
+                <BtnContent
+                  dangerouslySetInnerHTML={{ __html: surveyData[key].btn2 }}
+                />
+              </BtnDiv>
+            </BoxContainer>
+          </BtnContainer>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }
