@@ -1,4 +1,4 @@
-import surveyResultData from "@/data/surveyResultData";
+import SurveyResultData from "@/data/surveyResultData";
 import { useEffect, useState } from "react";
 
 export const useSurveyResult = (selectedButton) => {
@@ -12,7 +12,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(7) &&
       selectedButton.includes(8)
     ) {
-      setSelectedData(surveyResultData.영구);
+      setSelectedData(SurveyResultData.영구);
     } else if (
       //영구
       selectedButton.includes(2) &&
@@ -20,7 +20,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(7) &&
       selectedButton.includes(9)
     ) {
-      setSelectedData(surveyResultData.영구);
+      setSelectedData(SurveyResultData.영구);
     } else if (
       //소심
       selectedButton.includes(3) &&
@@ -28,7 +28,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(6) &&
       selectedButton.includes(8)
     ) {
-      setSelectedData(surveyResultData.소심);
+      setSelectedData(SurveyResultData.소심);
     } else if (
       //소심
       selectedButton.includes(2) &&
@@ -36,7 +36,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(6) &&
       selectedButton.includes(8)
     ) {
-      setSelectedData(surveyResultData.소심);
+      setSelectedData(SurveyResultData.소심);
     } else if (
       //유익
       selectedButton.includes(2) &&
@@ -44,7 +44,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(7) &&
       selectedButton.includes(9)
     ) {
-      setSelectedData(surveyResultData.유익);
+      setSelectedData(SurveyResultData.유익);
     } else if (
       //유익
       selectedButton.includes(3) &&
@@ -52,7 +52,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(7) &&
       selectedButton.includes(8)
     ) {
-      setSelectedData(surveyResultData.유익);
+      setSelectedData(SurveyResultData.유익);
     } else if (
       //고독
       selectedButton.includes(3) &&
@@ -60,7 +60,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(6) &&
       selectedButton.includes(9)
     ) {
-      setSelectedData(surveyResultData.고독);
+      setSelectedData(SurveyResultData.고독);
     } else if (
       //고독
       selectedButton.includes(2) &&
@@ -68,7 +68,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(7) &&
       selectedButton.includes(8)
     ) {
-      setSelectedData(surveyResultData.고독);
+      setSelectedData(SurveyResultData.고독);
     } else if (
       //소통
       selectedButton.includes(3) &&
@@ -76,7 +76,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(6) &&
       selectedButton.includes(8)
     ) {
-      setSelectedData(surveyResultData.소통);
+      setSelectedData(SurveyResultData.소통);
     } else if (
       //소통
       selectedButton.includes(3) &&
@@ -84,7 +84,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(6) &&
       selectedButton.includes(9)
     ) {
-      setSelectedData(surveyResultData.소통);
+      setSelectedData(SurveyResultData.소통);
     } else if (
       //북적
       selectedButton.includes(2) &&
@@ -92,7 +92,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(6) &&
       selectedButton.includes(9)
     ) {
-      setSelectedData(surveyResultData.북적);
+      setSelectedData(SurveyResultData.북적);
     } else if (
       //북적
       selectedButton.includes(2) &&
@@ -100,7 +100,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(6) &&
       selectedButton.includes(8)
     ) {
-      setSelectedData(surveyResultData.북적);
+      setSelectedData(SurveyResultData.북적);
     } else if (
       //집중
       selectedButton.includes(3) &&
@@ -108,7 +108,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(7) &&
       selectedButton.includes(9)
     ) {
-      setSelectedData(surveyResultData.집중);
+      setSelectedData(SurveyResultData.집중);
     } else if (
       //집중
       selectedButton.includes(3) &&
@@ -116,7 +116,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(7) &&
       selectedButton.includes(9)
     ) {
-      setSelectedData(surveyResultData.집중);
+      setSelectedData(SurveyResultData.집중);
     } else if (
       //한산
       selectedButton.includes(2) &&
@@ -124,7 +124,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(7) &&
       selectedButton.includes(8)
     ) {
-      setSelectedData(surveyResultData.한산);
+      setSelectedData(SurveyResultData.한산);
     } else if (
       //한산
       selectedButton.includes(2) &&
@@ -132,7 +132,7 @@ export const useSurveyResult = (selectedButton) => {
       selectedButton.includes(6) &&
       selectedButton.includes(9)
     ) {
-      setSelectedData(surveyResultData.한산);
+      setSelectedData(SurveyResultData.한산);
     }
   }, [selectedButton]);
 

@@ -1,6 +1,6 @@
 import SurveyStartPage from "@/components/pages/survey/survey-start-page/SurveyStartPage";
 import SurveyPage from "@/components/pages/survey/survey-page/SurveyPage";
-import surveyTestData from "@/data/surveyTestData";
+import SurveyTestData from "@/data/surveyTestData";
 import SurveyResult from "@/pages/survey-result";
 import { useState } from "react";
 
@@ -57,7 +57,7 @@ export const useSurvey = () => {
           return (
             <SurveyPage
               handleNextPage={handleNextPage}
-              surveyData={surveyTestData}
+              surveyData={SurveyTestData}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
               setSelectedButton={setSelectedButton}
