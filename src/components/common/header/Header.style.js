@@ -9,6 +9,7 @@ export const Header = styled.header`
   top: 0rem;
   display: flex;
   justify-content: space-around;
+  z-index: 1002;
 `;
 
 export const MenuUl = styled.ul`
@@ -17,6 +18,7 @@ export const MenuUl = styled.ul`
 `;
 
 export const MenuLi = styled.li`
+  width: 13rem;
   margin-right: 26rem;
   list-style-type: none;
   &:last-child {
