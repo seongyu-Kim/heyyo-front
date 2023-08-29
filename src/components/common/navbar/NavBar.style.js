@@ -65,7 +65,7 @@ export const ProfilLinkDiv = styled.div`
 
 export const LoginLinkDiv = styled.span`
   position: relative;
-  width: 5.2rem;
+  width: 7rem;
   height: 2.2rem;
   font-size: 1.5rem;
   font-weight: 900;
@@ -127,7 +127,7 @@ export const MessageContentDiv = styled.div`
 
 export const MoreModalDiv = styled.div`
   position: absolute;
-  z-index: 1000;
+  z-index: 1200;
   width: 9.6rem;
   height: 14.1rem;
   border-radius: 1rem;
