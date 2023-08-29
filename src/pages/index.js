@@ -1,9 +1,5 @@
+import HeyyoLayout from "@/components/pages/main/heyyo-layout/HeyyoLayout";
+
 export default function Home() {
-  return (
-    <>
-      <div>
-        <h1>Home</h1>
-      </div>
-    </>
-  );
+  return <HeyyoLayout />;
 }
