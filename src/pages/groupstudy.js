@@ -1,3 +1,5 @@
+import GroupStudyPageLayout from "@/components/pages/main/group-study-page/group-study-page-layout/GroupStudyPageLayout";
+
 export default function Groupstudy() {
-  return <h1>그룹 공부방</h1>;
+  return <GroupStudyPageLayout />;
 }
