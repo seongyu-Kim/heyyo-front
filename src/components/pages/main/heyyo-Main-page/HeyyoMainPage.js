@@ -1,4 +1,4 @@
-import * as style from "@/components/pages/main/Heyyo-Main-page/HeyyoMainPage.style";
+import * as style from "@/components/pages/main/heyyo-Main-page/HeyyoMainPage.style";
 import Image from "next/image";
 
 export default function HeyyoMainPage() {

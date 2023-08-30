@@ -1,5 +1,5 @@
 import * as style from "@/components/pages/main/heyyo-layout/HeyyoLayout.style";
-import HeyyoMainPage from "@/components/pages/main/Heyyo-Main-page/HeyyoMainPage";
+import HeyyoMainPage from "@/components/pages/main/heyyo-Main-page/HeyyoMainPage";
 import IntroductionPage from "@/components/pages/main/introduction-page/IntroductionPage";
 import { useState, useEffect } from "react";
 
