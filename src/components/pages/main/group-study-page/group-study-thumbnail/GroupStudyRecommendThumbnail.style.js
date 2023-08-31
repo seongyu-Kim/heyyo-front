@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { Font } from "@/assets/fonts/Font";
 import Image from "next/image";
 
-export const ThumbnailBox = styled.div`
+export const RecommendThumbnailBox = styled.div`
   display: flex;
   gap: 3.4rem;
   margin-top: 6.9rem;
 `;
-export const Thumbnail = styled.div`
+export const RecommendThumbnail = styled.div`
   position: relative;
   top: 22rem;
   left: 39.9rem;
@@ -18,15 +18,21 @@ export const Thumbnail = styled.div`
   box-shadow: 3px 3px 12px 5px rgba(0, 0, 0, 0.25);
 `;
 
-export const HeartButton = styled.button``;
+export const RecommendHeartButton = styled.button``;
 
-export const NonclickHeart = styled(Image)`
+export const RecommendNonclickHeart = styled(Image)`
   position: absolute;
   top: 2.2rem;
   left: 20rem;
 `;
 
-export const Title = styled.div`
+export const RecommendclickHeart = styled(Image)`
+  position: absolute;
+  top: 2.2rem;
+  left: 20rem;
+`;
+
+export const RecommendTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +47,7 @@ export const Title = styled.div`
   text-transform: uppercase;
 `;
 
-export const HashTag = styled.div`
+export const RecommendHashTag = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +62,7 @@ export const HashTag = styled.div`
   text-transform: uppercase;
 `;
 
-export const Views = styled.div`
+export const RecommendViews = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,11 +76,11 @@ export const Views = styled.div`
   text-transform: uppercase;
 `;
 
-export const ViewsImage = styled(Image)`
+export const RecommendViewsImage = styled(Image)`
   margin-right: 0.36rem;
 `;
 
-export const ShowMoreButton = styled.div`
+export const RecommendShowMoreButton = styled.div`
   position: relative;
   display: flex;
   justify-content: center;

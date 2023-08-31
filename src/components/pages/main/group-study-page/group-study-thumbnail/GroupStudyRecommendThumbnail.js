@@ -1,9 +1,19 @@
-import React, { useState } from "react";
-import * as style from "@/components/pages/main/group-study-page/group-study-recommend-thumbnail/GroupStudyRecommendThumbnail.style";
+import React, {useEffect, useState} from "react";
+import * as style from "@/components/pages/main/group-study-page/group-study-thumbnail/GroupStudyRecommendThumbnail.style";
 import Image from "next/image";
+import {groupStudyRecommendList} from "@/apis/group-study/list/groupStudyList";
 
 export default function GroupStudyRecommendThumbnail() {
   const thumbnailArray = Array.from({ length: 4 });
+  const [groupStudyRecommendListData, setGroupStudyRecommendListData] = useState([]);
+
+  // useEffect(() => {
+  //   groupStudyRecommendList()
+  //       .then((response) => {
+  //         console.log("Like 성공:", response);
+  //         setGroupStudyRecommendListData(response);
+  //       });
+  // }, []);
 
   const [heartClickedArrays, setHeartClickedArrays] = useState(
     new Array(8).fill(false),
@@ -19,13 +29,13 @@ export default function GroupStudyRecommendThumbnail() {
   return (
     <>
       {Array.from({ length: 2 }).map((_, groupIndex) => (
-        <style.ThumbnailBox key={groupIndex}>
+        <style.RecommendThumbnailBox key={groupIndex}>
           {thumbnailArray.map((_, thumbnailIndex) => (
-            <style.Thumbnail key={thumbnailIndex}>
-              <style.HeartButton
+            <style.RecommendThumbnail key={thumbnailIndex}>
+              <style.RecommendHeartButton
                 onClick={() => toggleHeart(groupIndex, thumbnailIndex)}
               >
-                <style.NonclickHeart
+                <style.RecommendNonclickHeart
                   src={
                     heartClickedArrays[groupIndex * 4 + thumbnailIndex]
                       ? "/assets/img/Click_Heart.svg"
@@ -44,11 +54,11 @@ export default function GroupStudyRecommendThumbnail() {
                   width={22}
                   height={22}
                 />
-              </style.HeartButton>
-              <style.Title>Title 들어갈 예정</style.Title>
-              <style.HashTag>#소통해요#집중해요</style.HashTag>
-              <style.Views>
-                <style.ViewsImage
+              </style.RecommendHeartButton>
+              <style.RecommendTitle>Title 들어갈 예정</style.RecommendTitle>
+              <style.RecommendHashTag>#소통해요#집중해요</style.RecommendHashTag>
+              <style.RecommendViews>
+                <style.RecommendViewsImage
                   src="/assets/img/Views.svg"
                   alt="Views"
                   loader={() => "/assets/img/Views.svg"}
@@ -56,12 +66,12 @@ export default function GroupStudyRecommendThumbnail() {
                   height={17}
                 />
                 560
-              </style.Views>
-            </style.Thumbnail>
+              </style.RecommendViews>
+            </style.RecommendThumbnail>
           ))}
-        </style.ThumbnailBox>
+        </style.RecommendThumbnailBox>
       ))}
-      <style.ShowMoreButton>
+      <style.RecommendShowMoreButton>
         <Image
           src="/assets/img/ShowmoreButton.svg"
           alt="ShowmoreButton"
@@ -69,7 +79,7 @@ export default function GroupStudyRecommendThumbnail() {
           width={182}
           height={49}
         />
-      </style.ShowMoreButton>
+      </style.RecommendShowMoreButton>
     </>
   );
 }
