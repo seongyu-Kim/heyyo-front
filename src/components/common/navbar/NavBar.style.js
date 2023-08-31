@@ -86,7 +86,7 @@ export const MoreLinkDiv = styled.div`
 
 export const NotificationModalDiv = styled.div`
   position: absolute;
-  z-index: 1000;
+  z-index: 1300;
   transform: translateX(-50%);
   width: 37.5rem;
   height: 24.2rem;
@@ -106,7 +106,7 @@ export const NotificationContentDiv = styled.div`
 
 export const MessageModalDiv = styled.div`
   position: absolute;
-  z-index: 1000;
+  z-index: 1300;
   transform: translateX(-50%);
   width: 23.4375rem;
   height: 30.5rem;
@@ -127,7 +127,7 @@ export const MessageContentDiv = styled.div`
 
 export const MoreModalDiv = styled.div`
   position: absolute;
-  z-index: 1200;
+  z-index: 1300;
   width: 9.6rem;
   height: 14.1rem;
   border-radius: 1rem;
