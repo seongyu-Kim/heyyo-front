@@ -2,11 +2,11 @@ import styled from "styled-components";
 import Image from "next/image";
 import { Font } from "@/assets/fonts/Font";
 
-export const ThumbnailBox = styled.div`
+export const NewThumbnailBox = styled.div`
   display: flex;
   gap: 3.4rem;
 `;
-export const Thumbnail = styled.div`
+export const NewThumbnail = styled.div`
   position: relative;
   top: 20.2rem;
   left: 53.1rem;
@@ -17,15 +17,21 @@ export const Thumbnail = styled.div`
   box-shadow: 3px 3px 12px 5px rgba(0, 0, 0, 0.25);
 `;
 
-export const HeartButton = styled.button``;
+export const NewHeartButton = styled.button``;
 
-export const NonclickHeart = styled(Image)`
+export const NewclickHeart = styled(Image)`
   position: absolute;
   top: 2rem;
   left: 15rem;
 `;
 
-export const Title = styled.div`
+export const NewNonclickHeart = styled(Image)`
+  position: absolute;
+  top: 2rem;
+  left: 15rem;
+`;
+
+export const NewTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +46,7 @@ export const Title = styled.div`
   text-transform: uppercase;
 `;
 
-export const HashTag = styled.div`
+export const NewHashTag = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +61,7 @@ export const HashTag = styled.div`
   text-transform: uppercase;
 `;
 
-export const Views = styled.div`
+export const NewViews = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,6 +75,6 @@ export const Views = styled.div`
   text-transform: uppercase;
 `;
 
-export const ViewsImage = styled(Image)`
+export const NewViewsImage = styled(Image)`
   margin-right: 0.36rem;
 `;
