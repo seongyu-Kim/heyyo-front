@@ -1,8 +1,10 @@
 import * as style from "@/components/pages/main/group-study-page/group-study-page-layout/GroupStudyPageLayout.style";
 import Image from "next/image";
 import GroupHashtagBox from "@/components/pages/main/group-study-page/group-hashtag-box/GroupHashtagBox";
-import GroupStudyThumbnailSwiper from "@/components/pages/main/group-study-page/group-study-thumbnail-swiper/GroupStudyThumbnailSwiper";
-import GroupStudyRecommendThumbnail from "@/components/pages/main/group-study-page/group-study-recommend-thumbnail/GroupStudyRecommendThumbnail";
+import GroupStudyNewThumbnailSwiper from "@/components/pages/main/group-study-page/group-study-thumbnail-swiper/GroupStudyNewThumbnailSwiper";
+import GroupStudyRecommendThumbnail from "@/components/pages/main/group-study-page/group-study-thumbnail/GroupStudyRecommendThumbnail";
+import GroupStudyLikeThumbnailSwiper
+  from "@/components/pages/main/group-study-page/group-study-thumbnail-swiper/GroupStudyLikeThumbnailSwiper";
 
 export default function GroupStudyPageLayout() {
   return (
@@ -31,14 +33,14 @@ export default function GroupStudyPageLayout() {
               방금 생긴 따끈따끈한 공부방이에YO!
             </style.NewContent>
           </style.Container>
-          <GroupStudyThumbnailSwiper />
+          <GroupStudyNewThumbnailSwiper />
         </style.NewGroupStudy>
         <style.BestDiv>
           <style.Container>
             <style.BestContentBold>BEST</style.BestContentBold>
             <style.BestContent>실시간 인기있는 공부방이에yo!</style.BestContent>
           </style.Container>
-          <GroupStudyThumbnailSwiper />
+          <GroupStudyLikeThumbnailSwiper />
         </style.BestDiv>
         <style.RecommendDiv>
           <style.Container>
