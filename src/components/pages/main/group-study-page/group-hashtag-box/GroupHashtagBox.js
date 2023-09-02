@@ -6,7 +6,9 @@ export default function GroupHashtagBox() {
   return (
     <style.Box>
       <style.HashtagBox>
-        <Link href="/">
+        <Link
+          href={{ pathname: "/groupstudyview", query: { mbti: "Loneliness" } }}
+        >
           <Image
             src="/assets/img/HashtagBox_고독.svg"
             alt="HashtagBox_고독"
@@ -15,7 +17,12 @@ export default function GroupHashtagBox() {
             height={66}
           />
         </Link>
-        <Link href="/">
+        <Link
+          href={{
+            pathname: "/groupstudyview",
+            query: { mbti: "Communication" },
+          }}
+        >
           <Image
             src="/assets/img/HashtagBox_소통.svg"
             alt="HashtagBox_소통"
@@ -24,7 +31,9 @@ export default function GroupHashtagBox() {
             height={66}
           />
         </Link>
-        <Link href="/">
+        <Link
+          href={{ pathname: "/groupstudyview", query: { mbti: "Crowded" } }}
+        >
           <Image
             src="/assets/img/HashtagBox_북적.svg"
             alt="HashtagBox_북적"
@@ -33,7 +42,7 @@ export default function GroupHashtagBox() {
             height={66}
           />
         </Link>
-        <Link href="/">
+        <Link href={{ pathname: "/groupstudyview", query: { mbti: "Quiet" } }}>
           <Image
             src="/assets/img/HashtagBox_한산.svg"
             alt="HashtagBox_한산"
@@ -45,7 +54,9 @@ export default function GroupHashtagBox() {
       </style.HashtagBox>
 
       <style.HashtagBox2>
-        <Link href="/">
+        <Link
+          href={{ pathname: "/groupstudyview", query: { mbti: "Researching" } }}
+        >
           <Image
             src="/assets/img/HashtagBox_연구.svg"
             alt="HashtagBox_연구"
@@ -54,7 +65,7 @@ export default function GroupHashtagBox() {
             height={66}
           />
         </Link>
-        <Link href="/">
+        <Link href={{ pathname: "/groupstudyview", query: { mbti: "Useful" } }}>
           <Image
             src="/assets/img/HashtagBox_빨리.svg"
             alt="HashtagBox_빨리"
@@ -63,7 +74,7 @@ export default function GroupHashtagBox() {
             height={66}
           />
         </Link>
-        <Link href="/">
+        <Link href={{ pathname: "/groupstudyview", query: { mbti: "Timid" } }}>
           <Image
             src="/assets/img/HashtagBox_소심.svg"
             alt="HashtagBox_소심"
@@ -72,7 +83,7 @@ export default function GroupHashtagBox() {
             height={66}
           />
         </Link>
-        <Link href="/">
+        <Link href={{ pathname: "/groupstudyview", query: { mbti: "Focus" } }}>
           <Image
             src="/assets/img/HashtagBox_집중.svg"
             alt="HashtagBox_집중"
