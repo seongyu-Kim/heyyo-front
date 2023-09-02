@@ -3,8 +3,7 @@ import Image from "next/image";
 import GroupHashtagBox from "@/components/pages/main/group-study-page/group-hashtag-box/GroupHashtagBox";
 import GroupStudyNewThumbnailSwiper from "@/components/pages/main/group-study-page/group-study-thumbnail-swiper/GroupStudyNewThumbnailSwiper";
 import GroupStudyRecommendThumbnail from "@/components/pages/main/group-study-page/group-study-thumbnail/GroupStudyRecommendThumbnail";
-import GroupStudyLikeThumbnailSwiper
-  from "@/components/pages/main/group-study-page/group-study-thumbnail-swiper/GroupStudyLikeThumbnailSwiper";
+import GroupStudyLikeThumbnailSwiper from "@/components/pages/main/group-study-page/group-study-thumbnail-swiper/GroupStudyLikeThumbnailSwiper";
 
 export default function GroupStudyPageLayout() {
   return (

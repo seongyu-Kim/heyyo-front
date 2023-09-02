@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import * as style from "@/components/pages/main/group-study-page/group-study-thumbnail/GroupStudyRecommendThumbnail.style";
 import Image from "next/image";
-import {groupStudyRecommendList} from "@/apis/group-study/list/groupStudyList";
+import { groupStudyRecommendList } from "@/apis/group-study/group-study-list/groupStudyList";
 
 export default function GroupStudyRecommendThumbnail() {
   const thumbnailArray = Array.from({ length: 4 });
-  const [groupStudyRecommendListData, setGroupStudyRecommendListData] = useState([]);
+  const [groupStudyRecommendListData, setGroupStudyRecommendListData] =
+    useState([]);
 
   // useEffect(() => {
   //   groupStudyRecommendList()
@@ -56,7 +57,9 @@ export default function GroupStudyRecommendThumbnail() {
                 />
               </style.RecommendHeartButton>
               <style.RecommendTitle>Title 들어갈 예정</style.RecommendTitle>
-              <style.RecommendHashTag>#소통해요#집중해요</style.RecommendHashTag>
+              <style.RecommendHashTag>
+                #소통해요#집중해요
+              </style.RecommendHashTag>
               <style.RecommendViews>
                 <style.RecommendViewsImage
                   src="/assets/img/Views.svg"

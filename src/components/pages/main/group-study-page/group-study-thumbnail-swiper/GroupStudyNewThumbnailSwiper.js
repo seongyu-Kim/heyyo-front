@@ -4,18 +4,17 @@ import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import {groupStudyNewList} from "@/apis/group-study/list/groupStudyList";
-import {useEffect, useState} from "react";
+import { groupStudyNewList } from "@/apis/group-study/group-study-list/groupStudyList";
+import { useEffect, useState } from "react";
 
 export default function GroupStudyNewThumbnailSwiper() {
   const [groupStudyNewListData, setGroupStudyNewListData] = useState([]);
 
   useEffect(() => {
-    groupStudyNewList()
-        .then((response) => {
-          console.log("New 성공:", response);
-          setGroupStudyNewListData(response);
-        });
+    groupStudyNewList().then((response) => {
+      console.log("New 성공:", response);
+      setGroupStudyNewListData(response);
+    });
   }, []);
 
   // 4개씩 묶은 배열
@@ -31,11 +30,10 @@ export default function GroupStudyNewThumbnailSwiper() {
       modules={[Navigation]}
     >
       {groupedNewThumbnails.map((groupStudyGroupNew, pageIndex) => (
-          <SwiperSlide key={pageIndex}>
-            <GroupStudyNewThumbnail groupStudyNewListData={groupStudyGroupNew} />
-          </SwiperSlide>
+        <SwiperSlide key={pageIndex}>
+          <GroupStudyNewThumbnail groupStudyNewListData={groupStudyGroupNew} />
+        </SwiperSlide>
       ))}
-
     </style.NewSwiperBox>
   );
 }
