@@ -1,7 +1,6 @@
 import React from "react";
 import * as style from "@/components/pages/share/share-rectangle/ShareRectangle.style"
 import Image from "next/image";
-import {VectorImage1} from "@/components/pages/share/share-diff-text-box/ShareDiffTextBox.style";
 
 export default function ShareRectangle({text}) {
     return (

@@ -1,6 +1,5 @@
 import React from "react";
 import * as style from "@/components/pages/share/share-box/ShareBox.style";
-import ShareRectangle from "@/components/pages/share/share-rectangle/ShareRectangle";
 import Image from "next/image";
 import ShareSwiper from "@/components/pages/share/share-swiper/ShareSwiper";
 

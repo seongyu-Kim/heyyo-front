@@ -67,11 +67,15 @@ export default function ShareSwiper() {
                         bottom: "23.5rem"// Adjust this margin for proper alignment
                     }}
                 >
+
                     {
                         data.map((value, index) => (
-                            <ShareRectangle text={value.test}></ShareRectangle>
+                            <ShareRectangle key={index}>
+                                {value.test}
+                            </ShareRectangle>
                         ))
                     }
+
                 </div>
             </SwiperSlide>
             <SwiperSlide>Slide 1</SwiperSlide>

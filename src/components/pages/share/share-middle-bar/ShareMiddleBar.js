@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import * as style from "@/components/pages/share/share-middle-bar/ShareMiddleBar.style";
 import Image from "next/image";
-import Link from "next/link";
-import ShareBottomBox from "@/components/pages/share/share-bottom-box/ShareBottomBox";
-import ShareDiffBottomBox from "@/components/pages/share/share-diff-bottom-box/ShareDiffBottomBox";
 
 export default function ShareMiddleBar({ setSelectedTab }) {
-  // const [selectedTab, setSelectedTab] = useState("ShareDiffBottomBox"); // 초기 선택 탭 설정
 
   return (
     <style.Wrapper>

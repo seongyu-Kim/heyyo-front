@@ -3,8 +3,9 @@ import * as style from "@/components/pages/share/share-diff-text-box/ShareDiffTe
 import { TextDiffContainerDiv } from "@/components/pages/share/share-diff-text-box/ShareDiffTextBox.style";
 import Image from "next/image";
 
-export default function xShareDiffTextBox() {
+export default function ShareDiffTextBox() {
   const [isVector1New, setIsVector1New] = useState(false);
+
 
   const handleVector1Click = () => {
     setIsVector1New(!isVector1New);
@@ -61,15 +62,6 @@ export default function xShareDiffTextBox() {
           />
         </style.VectorImage2>
 
-        {/*<style.VectorImage3>*/}
-        {/*    <Image*/}
-        {/*        src="/assets/img/Vector3.svg"*/}
-        {/*        alt="Vector2"*/}
-        {/*        loader={() => "/assets/img/Vector3.svg"}*/}
-        {/*        width={23}*/}
-        {/*        height={30}*/}
-        {/*    />*/}
-        {/*</style.VectorImage3>*/}
 
         <style.VectorImage4>
           <Image

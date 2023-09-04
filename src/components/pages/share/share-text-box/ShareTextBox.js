@@ -49,16 +49,6 @@ export default function ShareTextBox({ text }) {
                 />
             </style.VectorImage2>
 
-            {/*<style.VectorImage3>*/}
-            {/*    <Image*/}
-            {/*        src="/assets/img/Vector3.svg"*/}
-            {/*        alt="Vector2"*/}
-            {/*        loader={() => "/assets/img/Vector3.svg"}*/}
-            {/*        width={23}*/}
-            {/*        height={30}*/}
-            {/*    />*/}
-            {/*</style.VectorImage3>*/}
-
             <style.VectorImage4>
                 <Image
                     src="/assets/img/Vector4.svg"
