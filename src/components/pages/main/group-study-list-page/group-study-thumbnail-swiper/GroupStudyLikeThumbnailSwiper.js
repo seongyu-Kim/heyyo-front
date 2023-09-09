@@ -1,10 +1,10 @@
-import * as style from "@/components/pages/main/group-study-page/group-study-thumbnail-swiper/GroupStudyLikeThumbnailSwiper.style";
+import * as style from "@/components/pages/main/group-study-list-page/group-study-thumbnail-swiper/GroupStudyLikeThumbnailSwiper.style";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useEffect, useState } from "react";
-import GroupStudyLikeThumbnail from "@/components/pages/main/group-study-page/group-study-thumbnail/GroupStudyLikeThumbnail";
+import GroupStudyLikeThumbnail from "@/components/pages/main/group-study-list-page/group-study-thumbnail/GroupStudyLikeThumbnail";
 import { groupStudyLikeList } from "@/apis/group-study/group-study-list/groupStudyList";
 
 export default function GroupStudyLikeThumbnailSwiper() {

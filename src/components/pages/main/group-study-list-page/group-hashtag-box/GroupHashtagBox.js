@@ -1,4 +1,4 @@
-import * as style from "@/components/pages/main/group-study-page/group-hashtag-box/GroupHashtagBox.style";
+import * as style from "@/components/pages/main/group-study-list-page/group-hashtag-box/GroupHashtagBox.style";
 import Image from "next/image";
 import Link from "next/link";
 

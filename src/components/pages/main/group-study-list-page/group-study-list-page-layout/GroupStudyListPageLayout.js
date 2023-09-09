@@ -1,11 +1,11 @@
-import * as style from "@/components/pages/main/group-study-page/group-study-page-layout/GroupStudyPageLayout.style";
+import * as style from "@/components/pages/main/group-study-list-page/group-study-list-page-layout/GroupStudyListPageLayout.style";
 import Image from "next/image";
-import GroupHashtagBox from "@/components/pages/main/group-study-page/group-hashtag-box/GroupHashtagBox";
-import GroupStudyNewThumbnailSwiper from "@/components/pages/main/group-study-page/group-study-thumbnail-swiper/GroupStudyNewThumbnailSwiper";
-import GroupStudyRecommendThumbnail from "@/components/pages/main/group-study-page/group-study-thumbnail/GroupStudyRecommendThumbnail";
-import GroupStudyLikeThumbnailSwiper from "@/components/pages/main/group-study-page/group-study-thumbnail-swiper/GroupStudyLikeThumbnailSwiper";
+import GroupHashtagBox from "@/components/pages/main/group-study-list-page/group-hashtag-box/GroupHashtagBox";
+import GroupStudyNewThumbnailSwiper from "@/components/pages/main/group-study-list-page/group-study-thumbnail-swiper/GroupStudyNewThumbnailSwiper";
+import GroupStudyRecommendThumbnail from "@/components/pages/main/group-study-list-page/group-study-thumbnail/GroupStudyRecommendThumbnail";
+import GroupStudyLikeThumbnailSwiper from "@/components/pages/main/group-study-list-page/group-study-thumbnail-swiper/GroupStudyLikeThumbnailSwiper";
 
-export default function GroupStudyPageLayout() {
+export default function GroupStudyListPageLayout() {
   return (
     <style.Box>
       <style.HeyyoGroupStudyContainer>

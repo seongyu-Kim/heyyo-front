@@ -1,5 +1,5 @@
-import * as style from "@/components/pages/main/group-study-page/group-study-thumbnail-swiper/GroupStudyNewThumbnailSwiper.style";
-import GroupStudyNewThumbnail from "@/components/pages/main/group-study-page/group-study-thumbnail/GroupStudyNewThumbnail";
+import * as style from "@/components/pages/main/group-study-list-page/group-study-thumbnail-swiper/GroupStudyNewThumbnailSwiper.style";
+import GroupStudyNewThumbnail from "@/components/pages/main/group-study-list-page/group-study-thumbnail/GroupStudyNewThumbnail";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import "swiper/css";
