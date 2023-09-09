@@ -45,7 +45,7 @@ export default function Rectangle() {
           <Image
             src="assets/img/views.svg"
             alt="조회수 아이콘"
-            loader={() => "assets/img/views.svg"}
+            loader={() => "assets/img/Views.svg"}
             width={35.118}
             height={26.936}
           />

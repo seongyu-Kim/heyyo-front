@@ -62,9 +62,9 @@ export default function GroupStudyViewPageRecommendThumbnail() {
               </style.RecommendHashTag>
               <style.RecommendViews>
                 <style.RecommendViewsImage
-                  src="/assets/img/Views.svg"
+                  src="/assets/img/GroupStudy_Views.svg"
                   alt="Views"
-                  loader={() => "/assets/img/Views.svg"}
+                  loader={() => "/assets/img/GroupStudy_Views.svg"}
                   width={19}
                   height={17}
                 />
