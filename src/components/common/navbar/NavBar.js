@@ -180,7 +180,7 @@ export default function NavBar() {
         </style.ProfileContainer>
       </style.MenuContainer>
       {isMoreOpen && (
-        <style.MoreModalDiv ref={moreModalRef}>
+        <style.MoreModalDiv isLogin={accessToken} ref={moreModalRef}>
           {/* 로그인 작업 후 모달 구현 필요 */}
           <style.ModalDiv>
             <Link href="" passHref>

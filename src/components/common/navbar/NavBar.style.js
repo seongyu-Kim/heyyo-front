@@ -129,7 +129,7 @@ export const MoreModalDiv = styled.div`
   position: absolute;
   z-index: 1300;
   width: 9.6rem;
-  height: 14.1rem;
+  height: ${({ isLogin }) => (isLogin ? "14.1rem" : "11.6rem")};
   border-radius: 1rem;
   border: 1px solid #e9f7ff;
   background: #229eeb;
