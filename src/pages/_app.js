@@ -6,6 +6,10 @@ import { RecoilRoot } from "recoil";
 import axios from "axios";
 import "@/assets/fonts/font.css";
 import Header from "@/components/common/header/Header";
+import Footer from "@/components/common/footer/Footer";
+import login from "@/pages/login";
+import signup from "@/pages/signup";
+import survey from "@/pages/survey";
 
 function getAuthTokenFromLocalStorage() {
   return sessionStorage.getItem("authToken");
@@ -30,6 +34,12 @@ export default function App({ Component, pageProps }) {
     }
     return config;
   });
+
+  const isLoginPage = Component === login;
+  const isSignupPage = Component === signup;
+  const isSurveyPage = Component === survey;
+  const shouldHideFooter = isLoginPage || isSignupPage || isSurveyPage;
+
   return (
     <>
       <RecoilRoot>
@@ -38,6 +48,7 @@ export default function App({ Component, pageProps }) {
         <NavBar />
         <Header />
         <Component {...pageProps} />
+        {!shouldHideFooter && <Footer />}
       </RecoilRoot>
     </>
   );

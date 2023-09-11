@@ -3,6 +3,7 @@ import { Font } from "@/assets/fonts/Font";
 
 export const Box = styled.div`
   width: 100%;
+  height: 352rem;
 `;
 
 export const HeyyoGroupStudyContainer = styled.div`
