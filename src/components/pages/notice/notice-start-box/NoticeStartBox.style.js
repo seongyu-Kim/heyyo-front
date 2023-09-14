@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-export const Div = styled.div``
+export const Div = styled.div`
+  position: relative;
+`;
 
 export const NoticeContainer = styled.div`
-  position: absolute;
-  top : 14.3rem;
+  position: relative;
+  //top: 0;
   width: 100%;
   height: 57.4rem;
 `;

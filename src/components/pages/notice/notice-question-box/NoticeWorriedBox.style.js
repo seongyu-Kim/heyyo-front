@@ -7,16 +7,9 @@ export const BoxStyle = styled.div`
   border-radius: 2rem;
   background: #fff;
   box-shadow: 3px 3px 12px -2px rgba(0, 0, 0, 0.25);
-  &.expanded {
-    width: 113.1064rem;
-    height: 46rem;
-    //padding: 2rem;
-    border: 2px solid #007bff;
-    background: #fff;
-  }
 `;
 
-export const QuestListTitle = styled.span`
+export const QuestionListTitle = styled.span`
   position: relative;
   width: 53.4904rem;
   height: 3.1rem;
@@ -29,7 +22,7 @@ export const QuestListTitle = styled.span`
   line-height: 129.8%;
 `;
 
-export const QuestListContents = styled.span`
+export const QuestionListContents = styled.span`
   position: absolute;
   width: 84.4162rem;
   height: 3.4rem;
@@ -42,7 +35,7 @@ export const QuestListContents = styled.span`
   line-height: 129.8%;
 `;
 
-export const HashTagDiv = styled.div`
+export const Div = styled.div`
   position: relative;
   top: 11rem;
   left: 4.4rem;
@@ -52,11 +45,11 @@ export const HashTagDiv = styled.div`
   justify-content: space-between;
 `;
 
-export const HashtagContainer = styled.div`
+export const HashTagContainer = styled.div`
   display: flex;
 `;
 
-export const HashtagBox = styled.div`
+export const HashTagBox = styled.div`
   width: 11rem;
   height: 3.4rem;
   border-radius: 1.9rem;
@@ -67,7 +60,7 @@ export const HashtagBox = styled.div`
   align-items: center;
 `;
 
-export const HashtagContent = styled.span`
+export const HastTagContent = styled.span`
   width: 4.7456rem;
   color: #229eeb;
   text-align: center;
