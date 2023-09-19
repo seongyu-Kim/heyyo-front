@@ -7,9 +7,9 @@ export default function NoticeQuestionBox() {
   return (
     <div
       style={{
+        position: "relative",
+        margin: "5rem",
         display: "flex",
-        position: "absolute",
-        top: "10rem",
         flexDirection: "column",
         gap: "3rem",
       }}

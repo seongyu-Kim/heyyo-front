@@ -4,12 +4,13 @@ import Image from "next/image";
 import React from "react";
 import NoticeWorriedBox from "@/components/pages/notice/notice-question-box/NoticeWorriedBox";
 import NoticeQuestionBox from "@/components/pages/notice/notice-question-box/NoticeQuestionBox";
+import { QuestionTitleBox } from "@/components/pages/notice/notice-question-container/NoticeQuestionContainer.style";
 
 export default function Question() {
   const [selectedTab, setSelectedTab] = useState("궁금해요");
 
   return (
-    <style.QuestionContainer active={true}>
+    <style.QuestionContainer>
       {selectedTab === "궁금해요" && (
         <style.ContainerTitle>궁금증을 공유해요!</style.ContainerTitle>
       )}
@@ -28,45 +29,25 @@ export default function Question() {
         </style.SearchIcon>
       </style.SearchBox>
       <style.CategoryContainer>
-        <style.QuestionListTitle
-          onClick={() => setSelectedTab("궁금해요")}
-          active={selectedTab === "궁금해요"}
-        >
-          궁금해요
-        </style.QuestionListTitle>
-        <style.WorryListTitle
-          onClick={() => setSelectedTab("고민해요")}
-          active={selectedTab === "고민해요"}
-        >
-          고민해요
-        </style.WorryListTitle>
-        <style.TabImages>
-          {selectedTab === "궁금해요" && (
-            <Image
-              src="/assets/img/NewTabButton.svg"
-              alt="궁금해요TabButton"
-              loader={() => "/assets/img/NewTabButton.svg"}
-              width={1221}
-              height={7}
-            />
-          )}
-          {selectedTab === "고민해요" && (
-            <Image
-              src="/assets/img/BestTabButton.svg"
-              alt="고민해요TabButton"
-              loader={() => "/assets/img/BestTabButton.svg"}
-              width={1221}
-              height={7}
-            />
-          )}
-        </style.TabImages>
+        <style.QuestionTitleBox>
+          <style.QuestionCuriousBox
+            active={selectedTab === "궁금해요"}
+            onClick={() => setSelectedTab("궁금해요")}
+          >
+            <style.QuestionCuriousText>궁금해요</style.QuestionCuriousText>
+          </style.QuestionCuriousBox>
+          <style.QuestionCuriousBox
+            active={selectedTab === "고민해요"}
+            onClick={() => setSelectedTab("고민해요")}
+          >
+            <style.QuestionCuriousText>고민해요</style.QuestionCuriousText>
+          </style.QuestionCuriousBox>
+          <style.QuestionCuriousBox></style.QuestionCuriousBox>
+        </style.QuestionTitleBox>
       </style.CategoryContainer>
       <div
         style={{
-          position: "absolute",
-          top: "24.7rem",
-          display: "flex",
-          justifyContent: "center",
+          position: "relative",
         }}
       >
         {selectedTab === "궁금해요" && <NoticeQuestionBox />}

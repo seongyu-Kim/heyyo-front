@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
-export const Div = styled.div`
-  position: relative;
-`;
-
-export const NoticeContainer = styled.div`
-  position: relative;
-  //top: 0;
+export const Box = styled.div`
   width: 100%;
-  height: 57.4rem;
+`;
+export const ImageWrapper = styled.div`
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
 `;

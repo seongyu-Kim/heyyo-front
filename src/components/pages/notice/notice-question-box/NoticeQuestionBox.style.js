@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { Font } from "@/assets/fonts/Font";
 
 export const BoxStyle = styled.div`
+  position: relative;
   width: 113.1rem;
   height: 22.6rem;
   border-radius: 2rem;
-  background: #fff;
   box-shadow: 3px 3px 12px -2px rgba(0, 0, 0, 0.25);
   &.expanded {
     width: 113.1064rem;
@@ -16,11 +16,11 @@ export const BoxStyle = styled.div`
   }
 `;
 
-export const QuestListTitle = styled.span`
+export const QuestListTitle = styled.p`
   position: relative;
-  width: 53.4904rem;
   height: 3.1rem;
-  top: 3.25rem;
+  margin-top: 3.25rem;
+  margin-bottom: 0;
   left: 4.4rem;
   color: #000;
   font-size: ${Font.Size.L};
@@ -29,11 +29,12 @@ export const QuestListTitle = styled.span`
   line-height: 129.8%;
 `;
 
-export const QuestListContents = styled.span`
-  position: absolute;
+export const QuestListContents = styled.p`
+  position: relative;
   width: 84.4162rem;
   height: 3.4rem;
-  margin-top: 7.35rem;
+  margin: 0;
+  margin-top: 1rem;
   left: 4.4rem;
   color: #000;
   font-size: ${Font.Size.S};
@@ -44,15 +45,15 @@ export const QuestListContents = styled.span`
 
 export const HashTagDiv = styled.div`
   position: relative;
-  top: 11rem;
+  margin-top: 3.65rem;
   left: 4.4rem;
-  width: 34.4rem;
   height: 3.4rem;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
 `;
 
 export const HashtagContainer = styled.div`
+  position: absolute;
   display: flex;
 `;
 
@@ -75,23 +76,30 @@ export const HashtagContent = styled.span`
   font-weight: 500;
 `;
 
-export const HeyyoText = styled.span`
+export const BottomBox = styled.div`
+  position: absolute;
+  bottom: 0;
+  margin-top: 1.06rem;
+  display: flex;
+  height: 3.79rem;
+  width: 100%;
+  justify-content: space-between;
+`;
+
+export const HeyyoText = styled.p`
   position: relative;
   width: 3.6265rem;
-  top: 12rem;
-  left: 4.4rem;
   color: #a3a3a3;
+  margin-left: 4.4rem;
   font-size: ${Font.Size.S};
   font-style: normal;
   font-weight: 400;
   line-height: 129.8%;
 `;
 
-export const TimeText = styled.span`
+export const TimeText = styled.p`
   position: relative;
   width: 4.2rem;
-  top: 12rem;
-  left: 48.83rem;
   color: #a3a3a3;
   font-size: ${Font.Size.S};
   font-style: normal;
@@ -100,11 +108,11 @@ export const TimeText = styled.span`
 `;
 export const Icons = styled.div`
   position: relative;
-  top: 9rem;
-  left: 87rem;
   height: 3rem;
   width: 24rem;
   display: flex;
+  justify-content: space-between;
+  margin-right: 2.55rem;
 `;
 export const ViewIcon = styled.div`
   width: 3.5118rem;

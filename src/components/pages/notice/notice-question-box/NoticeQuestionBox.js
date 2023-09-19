@@ -13,9 +13,9 @@ export default function NoticeQuestionBox() {
   return (
     <div
       style={{
+        position: "relative",
+        margin: "5rem",
         display: "flex",
-        position: "absolute",
-        top: "10rem",
         flexDirection: "column",
         gap: "3rem",
       }}
@@ -48,40 +48,42 @@ export default function NoticeQuestionBox() {
               </style.HashtagBox>
             </style.HashtagContainer>
           </style.HashTagDiv>
-          <style.HeyyoText>해요</style.HeyyoText>
-          <style.TimeText>13분전</style.TimeText>
-          <style.Icons>
-            <style.ViewIcon>
-              <Image
-                src="assets/img/views.svg"
-                alt="조회수 아이콘"
-                loader={() => "assets/img/views.svg"}
-                width={35.118}
-                height={26.936}
-              />
-            </style.ViewIcon>
-            <style.ViewNum>462</style.ViewNum>
-            <style.CommentIcon>
-              <Image
-                src="assets/img/Comment.svg"
-                alt="댓글 아이콘"
-                loader={() => "assets/img/Comment.svg"}
-                width={28.004}
-                height={26.778}
-              />
-            </style.CommentIcon>
-            <style.CommentNum>9</style.CommentNum>
-            <style.BookmarkIcon>
-              <Image
-                src="assets/img/bookmark.svg"
-                alt="책갈피 아이콘"
-                loader={() => "assets/img/bookmark.svg"}
-                width={22.99}
-                height={30}
-              />
-            </style.BookmarkIcon>
-            <style.BookmarkNum>38</style.BookmarkNum>
-          </style.Icons>
+          <style.BottomBox>
+            <style.HeyyoText>해요</style.HeyyoText>
+            <style.TimeText>13분전</style.TimeText>
+            <style.Icons>
+              <style.ViewIcon>
+                <Image
+                  src="assets/img/views.svg"
+                  alt="조회수 아이콘"
+                  loader={() => "assets/img/views.svg"}
+                  width={35.118}
+                  height={26.936}
+                />
+              </style.ViewIcon>
+              <style.ViewNum>462</style.ViewNum>
+              <style.CommentIcon>
+                <Image
+                  src="assets/img/Comment.svg"
+                  alt="댓글 아이콘"
+                  loader={() => "assets/img/Comment.svg"}
+                  width={28.004}
+                  height={26.778}
+                />
+              </style.CommentIcon>
+              <style.CommentNum>9</style.CommentNum>
+              <style.BookmarkIcon>
+                <Image
+                  src="assets/img/bookmark.svg"
+                  alt="책갈피 아이콘"
+                  loader={() => "assets/img/bookmark.svg"}
+                  width={22.99}
+                  height={30}
+                />
+              </style.BookmarkIcon>
+              <style.BookmarkNum>38</style.BookmarkNum>
+            </style.Icons>
+          </style.BottomBox>
         </style.BoxStyle>
       ))}
     </div>

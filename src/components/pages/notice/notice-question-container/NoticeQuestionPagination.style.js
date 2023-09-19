@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const PaginationContainer = styled.div`
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 4.6rem;
-  bottom: 0;
+  margin-bottom: 6.85rem;
   background: #fff;
   display: flex;
   justify-content: center;
