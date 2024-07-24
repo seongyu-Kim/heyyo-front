@@ -40,6 +40,6 @@
 <br>
 
 ### 문서
-https://www.notion.so/2023-feba5277b62b4c518637248635d6e613?pvs=4#d24cf04cdb874413bc08d77885172e28
+https://drive.google.com/file/d/1stlhHoKyuTstFZIf5FEd3JZvIY4Cyefd/view?usp=drive_link
 
 
