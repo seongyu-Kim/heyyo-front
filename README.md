@@ -1,45 +1,54 @@
 # 해요
-> **📖 설명**
-> - 공부 성향에 따라 온라인 공부방을 생성 또는 추천해주는 웹사이트
-
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/bd5a6c7d-c53e-48f1-afa6-4899602f0603" alt="해요포스터" width="500" />
+  <img src="https://github.com/user-attachments/assets/bd5a6c7d-c53e-48f1-afa6-4899602f0603" alt="해요포스터" width="45%" />
 </div>
 
-> **기술 스택**
-> - <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"> <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"> <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"> <img src="https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=axios&logoColor=white" />
+<br />
 
-> **개발 인원(역할)**
-> - FE 4/ BE 2(프론트엔드 개발)
+## 1. 팀 소개
+**팀원** : 박재완(back), 박상진(back), 김선규(front), 정경주(front), 한유림(front), 심유정(front)
 
-> **개발 기간**
->  - 2023.06 ~ 2023.09
+<br />
 
-<br>
+## 2. 기획내용
+**프로젝트 소개** : 공부 성향을 테스트하고 그 결과에 따라 온라인 공부방을 생성해주는 플랫폼
 
-### 💁‍♂️ 주요 업무 및 상세 역할
-- Next.js를 사용하여 SPA 구조 설계 및 구현
-- Swiper 라이브러리를 활용하여 설문조사 페이지의 슬라이드 기능 구현
-- 설문조사 데이터 및 결과 데이터를 동적으로 관리 및 렌더링
-- React hooks를 이용한 상태관리
-- 공부 성향 테스트 페이지 프론트엔드 개발
+**프로젝트 기간** : 2023년 06월 ~ 2023년 09월
 
-<br>
-
-### 🎯 결과 및 성과
-
-<br>
-
-### 💡 느낀 점
-- 코드 리뷰
-    - React 프로젝트에서 처음으로 SPA를 구현하면서, 초기에는 React의 장점을 충분히 활용하지 못한 코드를 작성했습니다. 그러나 코드 리뷰를 통해 팀원들의 다양한 의견을 반영하고, 리팩토링을 통해 더 나은 코드를 작성할 수 있었습니다. 또한 코드 리뷰를 통해 본인이 생각하지 못한 방법을 팀원들과 주고 받으며 최적의 코드를 작성할 수 있음을 느꼈습니다.
-    
-- React Hooks
-    - useEffect 훅을 사용하여 컴포넌트의 부수 효과를 관리하고 useState 훅을 통해 컴포넌트의 상태를 관리하면서, React의 장점을 느꼈습니다. 더 효과적인 React의 사용을 위해, 추가적인 React Hooks 사용법의 중요성을 깨달았고, 상태 관리 라이브러리에 대해서도 공부할 수 있는 계기가 되었습니다.
- 
-<br>
-
-### 문서
-https://drive.google.com/file/d/1stlhHoKyuTstFZIf5FEd3JZvIY4Cyefd/view?usp=drive_link
+**프로젝트 인원** : 6명
 
 
+<br/>
+
+**기술 스택** : <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"> ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)  
+
+<br />
+
+## 3. 맡은 역할
+| **팀원**            | **역할**                                                                 |
+|---------------------|--------------------------------------------------------------------------|
+| **김선규 (Front)**  | 프로젝트 생성, 프로젝트 상세보기                                                |
+
+<br />
+
+## 4. 구현기능
+##### 공부 성향 테스트 페이지
+- 사용자의 공부 성향을 테스트하여 결과를 알려주는 페이지
+- swiper 라이브러리를 활용하여 설문조사 페이지의 슬라이드 기능 구현
+
+
+
+<br />
+
+## 화면 
+<div align="center">
+  <img width="45%" alt="스크린샷 2024-05-21 오후 3 54 55" src="https://github.com/user-attachments/assets/425d821d-0dbe-4d2f-a6dc-2e1d7d97c644" />
+  <img width="45%" alt="스크린샷 2024-05-21 오후 3 54 58" src="https://github.com/user-attachments/assets/a88b0b18-1818-477d-a2a7-a15208d53b18" />
+  <img width="45%" alt="스크린샷 2024-05-21 오후 3 55 01" src="https://github.com/user-attachments/assets/1991a890-8a29-4821-aeac-78d281a66d73" />
+  <img width="45%" alt="스크린샷 2024-05-21 오후 3 55 03" src="https://github.com/user-attachments/assets/d7c7eb96-cf0e-441d-bf49-0946b2e4a30a" />
+  <img width="45%" alt="스크린샷 2024-05-21 오후 3 55 05" src="https://github.com/user-attachments/assets/246bcaa5-5a1e-49c5-b096-25ac94365b7e" />
+  <img width="45%" alt="스크린샷 2024-05-21 오후 3 55 40" src="https://github.com/user-attachments/assets/d4d90dc3-d612-4c2a-880b-b9fb719b7dfd" />
+</div>
+
+## 시연영상
+[https://www.youtube.com/watch?v=MQrHQkgr8G8&list=PLhBsbIXDcDgdM62hExqcubGo2vD4I8uV2](https://drive.google.com/file/d/1stlhHoKyuTstFZIf5FEd3JZvIY4Cyefd/view?usp=drive_link)
